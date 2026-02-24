@@ -1,0 +1,12 @@
+{# About — alignment only (section-padding + container-custom + text-left); layout redo later #}
+<section class="section-padding" id="about">
+  <div class="container-custom">
+    {% from "macros/ui.njk" import sectionHeader %}
+    {% set a = home.about if home and home.about else {} %}
+    {{ sectionHeader(a.eyebrow | default('About'), a.title | default('About us'), '') }}
+    <p class="max-w-prose text-gray-700">{{ a.body | default('Placeholder copy for the about section.') }}</p>
+    {% if a.cta and a.cta.label %}
+    <div class="flex justify-end mt-4"><a href="{{ a.cta.url }}" class="text-brand-primary font-medium">{{ a.cta.label }}</a></div>
+    {% endif %}
+  </div>
+</section>

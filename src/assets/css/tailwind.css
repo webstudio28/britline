@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Template utility classes (alignment docs) */
+@layer components {
+  .container-custom {
+    @apply max-w-screen-xl mx-auto px-4 md:px-6;
+  }
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}

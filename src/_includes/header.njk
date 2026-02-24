@@ -1,0 +1,21 @@
+<header class="border-b border-gray-200">
+  <div class="container-custom flex items-center justify-between py-4">
+    <a href="{{ '/' | url }}" class="font-semibold text-lg" aria-label="{{ site.brand.name }} home">
+      {% if site.brand.logo %}
+        <span class="text-brand-primary">{{ site.brand.name }}</span>
+      {% else %}
+        <span>{{ site.brand.name }}</span>
+      {% endif %}
+    </a>
+    <nav class="hidden lg:flex items-center gap-6" aria-label="Main">
+      {% for item in site.nav.header %}
+        {% if item.isCta %}
+          <a href="{{ item.url }}" class="px-4 py-2 rounded-md bg-brand-primary text-white font-medium hover:opacity-90">{{ item.label }}</a>
+        {% else %}
+          <a href="{{ item.url }}" class="text-gray-700 hover:text-brand-primary">{{ item.label }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+    <button type="button" class="lg:hidden p-2 text-gray-700" aria-label="Open menu">Menu</button>
+  </div>
+</header>

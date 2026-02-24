@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "eyebrow": "Welcome",
+    "headline": "Your headline here",
+    "subheadline": "Short supporting line.",
+    "ctaPrimary": { "label": "Get started", "url": "#contact" },
+    "ctaSecondary": { "label": "Learn more", "url": "#about" },
+    "image": "/assets/images/hero.jpg"
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "About us",
+    "body": "Placeholder copy for the about section.",
+    "image": "/assets/images/about.jpg",
+    "cta": { "label": "Read more", "url": "#" }
+  },
+  "features": [],
+  "socialProof": [],
+  "faq": [],
+  "cta": {
+    "title": "Get in touch",
+    "description": "Ready to start? Reach out.",
+    "button": { "label": "Contact", "url": "#contact" }
+  }
+}

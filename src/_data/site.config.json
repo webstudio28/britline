@@ -1,0 +1,37 @@
+{
+  "brand": {
+    "name": "Landing",
+    "logo": "/assets/images/logo.svg",
+    "logoAlt": "Logo",
+    "language": "en"
+  },
+  "colors": {
+    "primary": "#2563eb",
+    "secondary": "#64748b",
+    "accent": "#f59e0b"
+  },
+  "seo": {
+    "siteUrl": "https://example.com",
+    "defaultTitle": "Landing",
+    "defaultDescription": "One-page landing template.",
+    "ogImage": "/assets/images/og-image.jpg",
+    "twitterCard": "summary_large_image"
+  },
+  "nav": {
+    "header": [
+      { "label": "About", "url": "#about" },
+      { "label": "Contact", "url": "#contact" },
+      { "label": "Book now", "url": "#", "isCta": true }
+    ],
+    "footer": [
+      { "label": "Privacy", "url": "/privacy" },
+      { "label": "Imprint", "url": "/imprint" }
+    ]
+  },
+  "contact": {
+    "phone": "",
+    "email": "hello@example.com",
+    "address": "",
+    "mapEmbedUrl": ""
+  }
+}

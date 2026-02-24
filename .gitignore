@@ -1,0 +1,34 @@
+# Local docs (architecture / notes — not for version control)
+local_docs/
+
+# Dependencies
+node_modules/
+
+# 11ty output
+_site/
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs and debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Optional cache and build artifacts
+.cache/
+.eleventy.cache/

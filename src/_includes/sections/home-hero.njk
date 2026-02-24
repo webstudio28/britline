@@ -1,0 +1,19 @@
+{# Hero — alignment only: center mobile, left desktop; layout/elements redo later #}
+<section class="section-padding flex items-start lg:items-center bg-gray-100">
+  <div class="container-custom">
+    <div class="flex flex-col items-center sm:items-start text-center sm:text-left max-w-2xl">
+      {% set h = home.hero if home and home.hero else {} %}
+      {% if h.eyebrow %}<p class="text-sm uppercase tracking-wide text-gray-600 mb-2">{{ h.eyebrow }}</p>{% endif %}
+      <h1 class="text-3xl font-bold mb-2">{{ h.headline | default('Your headline here') }}</h1>
+      <p class="text-lg text-gray-700 mb-6">{{ h.subheadline | default('Short supporting line.') }}</p>
+      <div class="flex flex-wrap gap-4 justify-center sm:justify-start items-center sm:items-start">
+        {% if h.ctaPrimary %}
+        <a href="{{ h.ctaPrimary.url }}" class="px-4 py-2 rounded-md bg-brand-primary text-white font-medium">{{ h.ctaPrimary.label }}</a>
+        {% endif %}
+        {% if h.ctaSecondary %}
+        <a href="{{ h.ctaSecondary.url }}" class="px-4 py-2 text-gray-700 font-medium">{{ h.ctaSecondary.label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

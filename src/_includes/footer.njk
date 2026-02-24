@@ -1,0 +1,30 @@
+<footer class="bg-gray-100 section-padding">
+  <div class="container-custom">
+    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+      <div>
+        <p class="font-semibold text-brand-primary">{{ site.brand.name }}</p>
+        <p class="text-sm text-gray-600 mt-1">&copy; {{ site.currentYear }}</p>
+      </div>
+      <div>
+        <p class="font-medium text-gray-800">Links</p>
+        <ul class="mt-2 space-y-1 text-sm text-gray-600">
+          {% for item in site.nav.footer %}
+            <li><a href="{{ item.url | url }}" class="hover:text-brand-primary">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <p class="font-medium text-gray-800">Contact</p>
+        <ul class="mt-2 space-y-1 text-sm text-gray-600">
+          {% if site.contact.email %}<li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>{% endif %}
+          {% if site.contact.phone %}<li>{{ site.contact.phone }}</li>{% endif %}
+          {% if site.contact.address %}<li>{{ site.contact.address }}</li>{% endif %}
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mt-10 pt-8 border-t border-gray-200">
+      <p class="text-sm text-gray-600">Generic footer — replace with your content.</p>
+      <a href="#contact" class="px-4 py-2 rounded-md bg-brand-primary text-white text-sm font-medium hover:opacity-90 inline-block w-fit">Get in touch</a>
+    </div>
+  </div>
+</footer>
