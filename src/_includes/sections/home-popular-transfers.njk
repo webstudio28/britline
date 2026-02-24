@@ -1,0 +1,26 @@
+{% from "macros/ui.njk" import icon %}
+<section class="section-padding bg-white">
+  <div class="container-custom mb-8">
+    <h2 class="text-2xl md:text-3xl font-bold text-brand-blue text-left">{{ home.popularTransfers.title }}</h2>
+  </div>
+  <div class="popular-transfers-strip-wrapper overflow-hidden">
+    <div class="popular-transfers-strip flex" aria-hidden="true">
+      <div class="popular-transfers-strip-set flex gap-4 pl-4 md:pl-6">
+        {% for item in home.popularTransfers.items %}
+        <div class="flex-shrink-0 flex items-center gap-3 rounded-2xl border-2 border-brand-blue/20 bg-brand-buttercream px-5 py-3 min-w-[200px] md:min-w-[220px]">
+          {{ icon('trip') }}
+          <span class="font-medium text-brand-blue text-sm md:text-base">{{ item.label }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="popular-transfers-strip-set flex gap-4 pl-4 md:pl-6">
+        {% for item in home.popularTransfers.items %}
+        <div class="flex-shrink-0 flex items-center gap-3 rounded-2xl border-2 border-brand-blue/20 bg-brand-buttercream px-5 py-3 min-w-[200px] md:min-w-[220px]">
+          {{ icon('trip') }}
+          <span class="font-medium text-brand-blue text-sm md:text-base">{{ item.label }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

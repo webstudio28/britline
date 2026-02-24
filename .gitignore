@@ -32,3 +32,6 @@ yarn-error.log*
 # Optional cache and build artifacts
 .cache/
 .eleventy.cache/
+
+# Generated CSS (built by css:build / css:watch)
+src/assets/css/styles.css

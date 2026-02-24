@@ -1,0 +1,116 @@
+<section class="section-padding bg-brand-buttercream" id="contact">
+  <div class="container-custom">
+    {% from "macros/ui.njk" import sectionHeader, icon %}
+    {% set c = home.contact %}
+    {{ sectionHeader('', c.title, c.subtitle) }}
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-12">
+      <div>
+        <ul class="space-y-4 text-brand-blue">
+          <li class="flex items-center gap-3">
+            {{ icon('phone') }}
+            <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="hover:underline">{{ site.contact.phone }}</a>
+          </li>
+          <li class="flex items-center gap-3">
+            {{ icon('whatsapp') }}
+            <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="hover:underline">WhatsApp</a>
+          </li>
+          <li class="flex items-center gap-3">
+            {{ icon('mail') }}
+            <a href="mailto:{{ site.contact.email }}" class="hover:underline">{{ site.contact.email }}</a>
+          </li>
+          <li class="flex items-center gap-3">
+            {{ icon('clock') }}
+            <span>{{ site.contact.workingHours }}</span>
+          </li>
+        </ul>
+        <div class="mt-10">
+          <h3 class="text-lg font-semibold text-brand-blue mb-4">{{ c.driverCta.title }}</h3>
+          <button type="button" class="inline-flex items-center gap-2 rounded-2xl bg-brand-blue text-white font-semibold px-5 py-2.5 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" data-modal-open="modal-driver" aria-haspopup="dialog">
+            {{ icon('driver') }}
+            {{ c.driverCta.buttonLabel }}
+          </button>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl shadow-lg p-6 md:p-8">
+        <form action="#" method="post" class="flex flex-col gap-4">
+          <div>
+            <label for="contact-name" class="block text-sm font-medium text-brand-blue mb-1">{{ c.form.nameLabel }}</label>
+            <input type="text" id="contact-name" name="name" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue outline-none" autocomplete="name">
+          </div>
+          <div>
+            <label for="contact-email" class="block text-sm font-medium text-brand-blue mb-1">{{ c.form.emailLabel }}</label>
+            <input type="email" id="contact-email" name="email" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue outline-none" autocomplete="email">
+          </div>
+          <div>
+            <label for="contact-message" class="block text-sm font-medium text-brand-blue mb-1">{{ c.form.messageLabel }}</label>
+            <textarea id="contact-message" name="message" rows="4" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue outline-none resize-y"></textarea>
+          </div>
+          <button type="submit" class="rounded-2xl bg-brand-accent text-white font-semibold py-3 px-4 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50">{{ c.form.submitLabel }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {# Driver application modal #}
+  <div id="modal-driver" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" aria-labelledby="modal-driver-title" role="dialog" hidden>
+    <div class="absolute inset-0 bg-black/50" data-modal-close aria-label="Close"></div>
+    <div class="relative bg-white rounded-3xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200">
+        <h2 id="modal-driver-title" class="text-xl font-bold text-brand-blue">{{ home.contact.driverCta.title }}</h2>
+        <button type="button" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" data-modal-close aria-label="Close modal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto flex-1">
+        {% set df = home.contact.driverForm %}
+        <form action="#" method="post" class="flex flex-col gap-4">
+          <div>
+            <label for="driver-name" class="block text-sm font-medium text-brand-blue mb-1">{{ df.nameLabel }}</label>
+            <input type="text" id="driver-name" name="name" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 outline-none" autocomplete="name">
+          </div>
+          <div>
+            <label for="driver-email" class="block text-sm font-medium text-brand-blue mb-1">{{ df.emailLabel }}</label>
+            <input type="email" id="driver-email" name="email" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 outline-none" autocomplete="email">
+          </div>
+          <div>
+            <label for="driver-phone" class="block text-sm font-medium text-brand-blue mb-1">{{ df.phoneLabel }}</label>
+            <input type="tel" id="driver-phone" name="phone" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 outline-none" autocomplete="tel">
+          </div>
+          <div>
+            <label for="driver-tfl" class="block text-sm font-medium text-brand-blue mb-1">{{ df.tflLabel }}</label>
+            <select id="driver-tfl" name="tfl" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 outline-none">
+              <option value="">Select</option>
+              {% for opt in df.tflOptions %}<option value="{{ opt | lower | replace(' ', '-') }}">{{ opt }}</option>{% endfor %}
+            </select>
+          </div>
+          <div>
+            <label for="driver-age" class="block text-sm font-medium text-brand-blue mb-1">{{ df.ageLabel }}</label>
+            <input type="number" id="driver-age" name="age" min="18" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 outline-none">
+          </div>
+          <div>
+            <label for="driver-postcode" class="block text-sm font-medium text-brand-blue mb-1">{{ df.postcodeLabel }}</label>
+            <input type="text" id="driver-postcode" name="postcode" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 outline-none" autocomplete="postal-code">
+          </div>
+          <fieldset class="rounded-2xl border border-brand-blue/20 p-4">
+            <legend class="text-sm font-semibold text-brand-blue">{{ df.vehicleTitle }}</legend>
+            <div class="mt-3 space-y-3">
+              <div>
+                <label for="driver-make" class="block text-sm text-brand-blue/90 mb-1">{{ df.makeLabel }}</label>
+                <input type="text" id="driver-make" name="vehicle_make" class="w-full rounded-xl border border-gray-200 px-4 py-2 focus:ring-2 focus:ring-brand-blue/30 outline-none">
+              </div>
+              <div>
+                <label for="driver-model" class="block text-sm text-brand-blue/90 mb-1">{{ df.modelLabel }}</label>
+                <input type="text" id="driver-model" name="vehicle_model" class="w-full rounded-xl border border-gray-200 px-4 py-2 focus:ring-2 focus:ring-brand-blue/30 outline-none">
+              </div>
+              <div>
+                <label for="driver-reg" class="block text-sm text-brand-blue/90 mb-1">{{ df.regLabel }}</label>
+                <input type="text" id="driver-reg" name="vehicle_reg" placeholder="e.g. 2020" class="w-full rounded-xl border border-gray-200 px-4 py-2 focus:ring-2 focus:ring-brand-blue/30 outline-none">
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit" class="rounded-2xl bg-brand-accent text-white font-semibold py-3 px-4 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50">{{ df.submitLabel }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

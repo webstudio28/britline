@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Brand defaults (overridden by base layout from site.config) */
+:root {
+  --color-brand-buttercream: #F5F0E6;
+  --color-brand-blue: #1E3A5F;
+  --color-brand-accent: #C75B39;
+}
+
 /* Template utility classes (alignment docs) */
 @layer components {
   .container-custom {

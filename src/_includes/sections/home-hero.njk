@@ -1,18 +1,31 @@
-{# Hero — alignment only: center mobile, left desktop; layout/elements redo later #}
-<section class="section-padding flex items-start lg:items-center bg-gray-100">
-  <div class="container-custom">
-    <div class="flex flex-col items-center sm:items-start text-center sm:text-left max-w-2xl">
-      {% set h = home.hero if home and home.hero else {} %}
-      {% if h.eyebrow %}<p class="text-sm uppercase tracking-wide text-gray-600 mb-2">{{ h.eyebrow }}</p>{% endif %}
-      <h1 class="text-3xl font-bold mb-2">{{ h.headline | default('Your headline here') }}</h1>
-      <p class="text-lg text-gray-700 mb-6">{{ h.subheadline | default('Short supporting line.') }}</p>
-      <div class="flex flex-wrap gap-4 justify-center sm:justify-start items-center sm:items-start">
-        {% if h.ctaPrimary %}
-        <a href="{{ h.ctaPrimary.url }}" class="px-4 py-2 rounded-md bg-brand-primary text-white font-medium">{{ h.ctaPrimary.label }}</a>
-        {% endif %}
-        {% if h.ctaSecondary %}
-        <a href="{{ h.ctaSecondary.url }}" class="px-4 py-2 text-gray-700 font-medium">{{ h.ctaSecondary.label }}</a>
-        {% endif %}
+<section class="relative min-h-[90vh] flex items-center overflow-hidden text-white" id="hero">
+  <div class="absolute inset-0 z-0">
+    <img src="{{ ('/assets/images/' + home.hero.image) | url }}" alt="" class="w-full h-full object-cover" fetchpriority="high">
+    <div class="absolute inset-0 bg-black/65" aria-hidden="true"></div>
+  </div>
+  <div class="container-custom relative z-10 section-padding w-full">
+    <div class="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+      <div class="text-left max-w-xl">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">{{ home.hero.headline }}</h1>
+        <p class="text-lg text-white/90 mb-6">{{ home.hero.paragraph }}</p>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white hover:opacity-90" aria-label="Chat on WhatsApp">
+          {% from "macros/ui.njk" import icon %}
+          {{ icon('whatsapp') }}
+          <span>WhatsApp</span>
+        </a>
+      </div>
+      <div class="w-full max-w-md bg-white/95 rounded-3xl shadow-xl p-6 md:p-8 text-brand-blue">
+        <form action="#contact" method="get" class="flex flex-col gap-4">
+          <div>
+            <label for="hero-from" class="block text-sm font-medium mb-1">{{ home.hero.booking.fromLabel }}</label>
+            <input type="text" id="hero-from" name="from" placeholder="e.g. Heathrow T5" class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue outline-none" autocomplete="off">
+          </div>
+          <div>
+            <label for="hero-to" class="block text-sm font-medium mb-1">{{ home.hero.booking.toLabel }}</label>
+            <input type="text" id="hero-to" name="to" placeholder="e.g. Central London" class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue outline-none" autocomplete="off">
+          </div>
+          <button type="submit" class="w-full rounded-2xl bg-brand-accent text-white font-semibold py-3 px-4 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50">{{ home.hero.booking.buttonLabel }}</button>
+        </form>
       </div>
     </div>
   </div>

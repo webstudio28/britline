@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ site.seo.ogImage }}{% endif %}">
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
 </head>
-<body{% if site and site.colors %} style="--color-brand-primary: {{ site.colors.primary }}; --color-brand-secondary: {{ site.colors.secondary }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
+<body class="bg-brand-buttercream"{% if site and site.colors %} style="--color-brand-buttercream: {{ site.colors.buttercream }}; --color-brand-blue: {{ site.colors.britishBlue }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
   {% include "header.njk" %}
   {{ content | safe }}
   {% include "footer.njk" %}

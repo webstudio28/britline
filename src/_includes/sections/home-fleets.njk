@@ -1,0 +1,29 @@
+<section class="section-padding bg-white" id="fleets">
+  <div class="container-custom">
+    {% from "macros/ui.njk" import sectionHeader, icon %}
+    {% set f = home.fleets %}
+    {{ sectionHeader(f.eyebrow, f.title, f.subtitle) }}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {% for item in f.items %}
+      <div class="rounded-3xl overflow-hidden shadow-lg flex flex-col {% if item.luxury %}ring-2 ring-brand-accent{% endif %}">
+        <div class="relative aspect-[4/3] bg-brand-blue">
+          <img src="{{ ('/assets/images/' + item.image) | url }}" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
+          <span class="absolute top-4 left-4 text-white font-bold text-lg drop-shadow">{{ item.name }}</span>
+        </div>
+        <div class="p-5 bg-white">
+          <p class="text-brand-blue/90 mb-4">{{ item.description }}</p>
+          <div class="grid grid-cols-2 gap-2 text-sm">
+            {% for feat in item.features %}
+            <div class="flex items-center gap-2 text-brand-blue/80">
+              {{ icon(feat.icon) }}
+              <span>{{ feat.label }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

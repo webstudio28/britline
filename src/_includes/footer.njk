@@ -1,30 +1,38 @@
-<footer class="bg-gray-100 section-padding">
+<footer class="bg-brand-blue text-white section-padding">
   <div class="container-custom">
-    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-      <div>
-        <p class="font-semibold text-brand-primary">{{ site.brand.name }}</p>
-        <p class="text-sm text-gray-600 mt-1">&copy; {{ site.currentYear }}</p>
-      </div>
-      <div>
-        <p class="font-medium text-gray-800">Links</p>
-        <ul class="mt-2 space-y-1 text-sm text-gray-600">
-          {% for item in site.nav.footer %}
-            <li><a href="{{ item.url | url }}" class="hover:text-brand-primary">{{ item.label }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div>
-        <p class="font-medium text-gray-800">Contact</p>
-        <ul class="mt-2 space-y-1 text-sm text-gray-600">
-          {% if site.contact.email %}<li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>{% endif %}
-          {% if site.contact.phone %}<li>{{ site.contact.phone }}</li>{% endif %}
-          {% if site.contact.address %}<li>{{ site.contact.address }}</li>{% endif %}
-        </ul>
-      </div>
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <p class="font-semibold text-lg">{{ site.brand.name }}</p>
+      <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Legal">
+        {% for item in site.nav.footer %}
+          {% if item.modalId %}
+          <button type="button" class="text-white/90 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded" data-modal-open="{{ item.modalId }}">{{ item.label }}</button>
+          {% else %}
+          <a href="{{ item.url | url }}" class="text-white/90 hover:text-white">{{ item.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
     </div>
-    <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mt-10 pt-8 border-t border-gray-200">
-      <p class="text-sm text-gray-600">Generic footer — replace with your content.</p>
-      <a href="#contact" class="px-4 py-2 rounded-md bg-brand-primary text-white text-sm font-medium hover:opacity-90 inline-block w-fit">Get in touch</a>
-    </div>
+    <p class="mt-6 text-white/70 text-sm">&copy; {{ site.currentYear }} {{ site.brand.name }}. All rights reserved.</p>
   </div>
 </footer>
+
+{# Policy modals — dummy text from home.policies #}
+{% for key, policy in home.policies %}
+<div id="modal-{{ key }}" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" aria-labelledby="modal-{{ key }}-title" role="dialog" hidden>
+  <div class="absolute inset-0 bg-black/50" data-modal-close aria-label="Close"></div>
+  <div class="relative bg-white rounded-3xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col text-brand-blue">
+    <div class="flex items-center justify-between p-6 border-b border-gray-200">
+      <h2 id="modal-{{ key }}-title" class="text-xl font-bold">{{ policy.title }}</h2>
+      <button type="button" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" data-modal-close aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="p-6 overflow-y-auto flex-1 prose prose-sm max-w-none">
+      <p>{{ policy.body }}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<script src="{{ '/assets/js/modal.js' | url }}" defer></script>
+<script src="{{ '/assets/js/popular-transfers-strip.js' | url }}" defer></script>

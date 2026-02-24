@@ -1,21 +1,15 @@
-<header class="border-b border-gray-200">
+<header class="border-b border-brand-blue/10 bg-white/95 sticky top-0 z-40">
   <div class="container-custom flex items-center justify-between py-4">
-    <a href="{{ '/' | url }}" class="font-semibold text-lg" aria-label="{{ site.brand.name }} home">
-      {% if site.brand.logo %}
-        <span class="text-brand-primary">{{ site.brand.name }}</span>
-      {% else %}
-        <span>{{ site.brand.name }}</span>
-      {% endif %}
-    </a>
+    <a href="{{ '/' | url }}" class="font-semibold text-lg text-brand-blue" aria-label="{{ site.brand.name }} home">{{ site.brand.name }}</a>
     <nav class="hidden lg:flex items-center gap-6" aria-label="Main">
       {% for item in site.nav.header %}
         {% if item.isCta %}
-          <a href="{{ item.url }}" class="px-4 py-2 rounded-md bg-brand-primary text-white font-medium hover:opacity-90">{{ item.label }}</a>
+          <a href="{{ item.url }}" class="px-4 py-2 rounded-2xl bg-brand-accent text-white font-medium hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50">{{ item.label }}</a>
         {% else %}
-          <a href="{{ item.url }}" class="text-gray-700 hover:text-brand-primary">{{ item.label }}</a>
+          <a href="{{ item.url }}" class="text-brand-blue hover:opacity-80">{{ item.label }}</a>
         {% endif %}
       {% endfor %}
     </nav>
-    <button type="button" class="lg:hidden p-2 text-gray-700" aria-label="Open menu">Menu</button>
+    <button type="button" class="lg:hidden p-2 text-brand-blue" aria-label="Open menu">Menu</button>
   </div>
 </header>

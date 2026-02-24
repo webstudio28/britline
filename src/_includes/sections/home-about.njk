@@ -1,12 +1,24 @@
-{# About — alignment only (section-padding + container-custom + text-left); layout redo later #}
-<section class="section-padding" id="about">
+<section class="section-padding bg-brand-buttercream" id="about">
   <div class="container-custom">
-    {% from "macros/ui.njk" import sectionHeader %}
-    {% set a = home.about if home and home.about else {} %}
-    {{ sectionHeader(a.eyebrow | default('About'), a.title | default('About us'), '') }}
-    <p class="max-w-prose text-gray-700">{{ a.body | default('Placeholder copy for the about section.') }}</p>
-    {% if a.cta and a.cta.label %}
-    <div class="flex justify-end mt-4"><a href="{{ a.cta.url }}" class="text-brand-primary font-medium">{{ a.cta.label }}</a></div>
-    {% endif %}
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-14 items-center">
+      <div class="order-2 lg:order-1">
+        {% from "macros/ui.njk" import sectionHeader %}
+        {% set a = home.about %}
+        {{ sectionHeader(a.eyebrow, a.title, '') }}
+        <p class="text-brand-blue/90 leading-relaxed mb-4">{{ a.paragraph1 }}</p>
+        <p class="text-brand-blue/90 leading-relaxed mb-6">{{ a.paragraph2 }}</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {% for feat in a.features %}
+          <div class="rounded-2xl bg-white border border-brand-blue/10 px-5 py-4 shadow-sm">
+            <h3 class="font-semibold text-brand-blue">{{ feat.title }}</h3>
+            <p class="text-sm text-brand-blue/80 mt-1">{{ feat.text }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 grid grid-cols-2 gap-3">
+        <img src="{{ ('/assets/images/' + home.about.image) | url }}" alt="" class="rounded-2xl shadow-lg w-full aspect-square object-cover col-span-2 max-w-sm mx-auto" loading="lazy">
+      </div>
+    </div>
   </div>
 </section>

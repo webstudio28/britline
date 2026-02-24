@@ -1,25 +1,179 @@
 {
   "hero": {
-    "eyebrow": "Welcome",
-    "headline": "Your headline here",
-    "subheadline": "Short supporting line.",
-    "ctaPrimary": { "label": "Get started", "url": "#contact" },
-    "ctaSecondary": { "label": "Learn more", "url": "#about" },
-    "image": "/assets/images/hero.jpg"
+    "headline": "Comfortable Transfers When You Need Them",
+    "paragraph": "Door-to-door and airport transfers across London and the UK. PCO licensed, professional drivers.",
+    "booking": {
+      "fromLabel": "From",
+      "toLabel": "To",
+      "buttonLabel": "Find the cheapest fare"
+    },
+    "image": "hero-bg.jpg"
+  },
+  "pcoStrip": {
+    "badge": "We're Private Hire PCO Registered",
+    "licenceNumber": "4164",
+    "testimonials": [
+      { "quote": "On time, clean car, great driver.", "author": "Sarah M." },
+      { "quote": "Best airport transfer I've had.", "author": "James K." },
+      { "quote": "Will book again. Highly recommend.", "author": "Emma L." },
+      { "quote": "Smooth ride, fair price.", "author": "David R." }
+    ]
+  },
+  "services": {
+    "eyebrow": "What we offer",
+    "title": "Our Services",
+    "subtitle": "From airport pickups to hourly hire — we cover it.",
+    "items": [
+      { "title": "Door to door", "description": "Pick-up and drop-off wherever you need.", "image": "svc-door.jpg", "cta": "Make inquiry" },
+      { "title": "Airport transfers", "description": "Heathrow, Gatwick, Stansted and more.", "image": "svc-airport.jpg", "cta": "Make inquiry" },
+      { "title": "Airport to cruise docks", "description": "Seamless connection to your ship.", "image": "svc-cruise.jpg", "cta": "Make inquiry" },
+      { "title": "Rent a car by hour", "description": "Flexible hourly hire with a dedicated driver.", "image": "svc-hourly.jpg", "cta": "Make inquiry" },
+      { "title": "Group transfers", "description": "Minibuses and larger vehicles for groups.", "image": "svc-group.jpg", "cta": "Make inquiry" },
+      { "title": "Private transfers", "description": "Discreet, comfortable private journeys.", "image": "svc-private.jpg", "cta": "Make inquiry" }
+    ]
+  },
+  "fleets": {
+    "eyebrow": "Our vehicles",
+    "title": "Our Fleet",
+    "subtitle": "From executive sedans to spacious minibuses.",
+    "items": [
+      {
+        "name": "Luxury transfer",
+        "description": "Premium vehicles for special occasions.",
+        "image": "fleet-lux.jpg",
+        "luxury": true,
+        "features": [
+          { "icon": "seat", "label": "Leather interior" },
+          { "icon": "wifi", "label": "Wi‑Fi" },
+          { "icon": "water", "label": "Complimentary water" },
+          { "icon": "charger", "label": "USB charging" },
+          { "icon": "space", "label": "Extra legroom" },
+          { "icon": "shield", "label": "Premium insurance" }
+        ]
+      },
+      {
+        "name": "Executive sedan",
+        "description": "Comfortable saloons for business or leisure.",
+        "image": "fleet-sedan.jpg",
+        "features": [
+          { "icon": "seat", "label": "4 seats" },
+          { "icon": "luggage", "label": "2 large bags" },
+          { "icon": "ac", "label": "Climate control" },
+          { "icon": "charger", "label": "USB" },
+          { "icon": "child", "label": "Child seat option" },
+          { "icon": "card", "label": "Card payment" }
+        ]
+      },
+      {
+        "name": "Estate",
+        "description": "Extra boot space for luggage and kit.",
+        "image": "fleet-estate.jpg",
+        "features": [
+          { "icon": "seat", "label": "4 seats" },
+          { "icon": "luggage", "label": "4 large bags" },
+          { "icon": "ac", "label": "Climate control" },
+          { "icon": "charger", "label": "USB" },
+          { "icon": "child", "label": "Child seat option" },
+          { "icon": "card", "label": "Card payment" }
+        ]
+      },
+      {
+        "name": "Minivan",
+        "description": "Ideal for groups and events.",
+        "image": "fleet-van.jpg",
+        "features": [
+          { "icon": "seat", "label": "8 seats" },
+          { "icon": "luggage", "label": "8+ bags" },
+          { "icon": "ac", "label": "Climate control" },
+          { "icon": "charger", "label": "Multiple USB" },
+          { "icon": "child", "label": "Child seats" },
+          { "icon": "card", "label": "Card payment" }
+        ]
+      }
+    ]
   },
   "about": {
-    "eyebrow": "About",
-    "title": "About us",
-    "body": "Placeholder copy for the about section.",
-    "image": "/assets/images/about.jpg",
-    "cta": { "label": "Read more", "url": "#" }
+    "eyebrow": "About us",
+    "title": "Who We Are",
+    "paragraph1": "We are a London-based private hire operator with a focus on reliability and comfort. Our team of PCO-licensed drivers and well-maintained vehicles are here to make your journey smooth.",
+    "paragraph2": "Whether you need an airport transfer, a door-to-door ride, or hourly hire, we tailor our service to your schedule. Quality and safety come first.",
+    "image": "about-img.jpg",
+    "features": [
+      { "title": "PCO licensed", "text": "Fully compliant with TfL Private Hire regulations." },
+      { "title": "Fixed quotes", "text": "Transparent pricing with no hidden fees." }
+    ]
   },
-  "features": [],
-  "socialProof": [],
-  "faq": [],
-  "cta": {
-    "title": "Get in touch",
-    "description": "Ready to start? Reach out.",
-    "button": { "label": "Contact", "url": "#contact" }
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      { "question": "How do I book a transfer?", "answer": "You can book via our website, by phone, or WhatsApp. We will confirm your booking and send you driver details before the journey." },
+      { "question": "Do you do airport pickups?", "answer": "Yes. We cover all major London airports including Heathrow, Gatwick, Stansted, Luton and London City." },
+      { "question": "Can I get a quote in advance?", "answer": "Yes. Contact us with your pickup and drop-off points and we will provide a fixed quote." },
+      { "question": "What if my flight is delayed?", "answer": "We track your flight and adjust pickup time at no extra cost. Keep your phone on so we can reach you." },
+      { "question": "Do you provide child seats?", "answer": "Yes. Please request when booking and we will fit an appropriate child seat at no extra charge." },
+      { "question": "How do I pay?", "answer": "We accept card payments and cash. Payment details can be confirmed when you book." }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Call, message or email — we're here to help.",
+    "form": {
+      "nameLabel": "Full Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "submitLabel": "Send message"
+    },
+    "driverCta": {
+      "title": "Become a driver",
+      "buttonLabel": "Become a driver"
+    },
+    "driverForm": {
+      "nameLabel": "Full Name",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone number",
+      "tflLabel": "TfL Private Hire Licence",
+      "tflOptions": ["Yes", "No", "In progress"],
+      "ageLabel": "Age",
+      "postcodeLabel": "Postcode",
+      "vehicleTitle": "Vehicle",
+      "makeLabel": "Car make",
+      "modelLabel": "Car model",
+      "regLabel": "Date of registration",
+      "submitLabel": "Submit application"
+    }
+  },
+  "footerCta": {
+    "title": "Ready to Book?",
+    "description": "Get a fixed quote or book your transfer now. We're available 24/7.",
+    "buttonLabel": "Get a quote",
+    "buttonUrl": "#contact",
+    "image": "cta-bg.jpg"
+  },
+  "popularTransfers": {
+    "title": "Popular Transfers",
+    "items": [
+      { "label": "Heathrow → Central London" },
+      { "label": "Gatwick → London" },
+      { "label": "Stansted → London" },
+      { "label": "Luton → London" },
+      { "label": "London → Southampton (cruise)" },
+      { "label": "London → Dover" },
+      { "label": "Airport → Hotel" },
+      { "label": "Station → Airport" }
+    ]
+  },
+  "policies": {
+    "terms": {
+      "title": "Terms and Conditions",
+      "body": "These terms and conditions govern your use of our transfer services. By booking with us you agree to these terms. Please read them carefully. This is placeholder text; replace with your full terms."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "body": "We respect your privacy. This policy explains how we collect, use and protect your personal data when you use our services or website. This is placeholder text; replace with your full privacy policy."
+    },
+    "refund": {
+      "title": "Refund Policy",
+      "body": "Cancellation and refund terms depend on how far in advance you cancel. Full details will be provided at booking. This is placeholder text; replace with your full refund policy."
+    }
   }
 }

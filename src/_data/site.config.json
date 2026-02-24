@@ -1,37 +1,43 @@
 {
   "brand": {
-    "name": "Landing",
-    "logo": "/assets/images/logo.svg",
-    "logoAlt": "Logo",
+    "name": "Britline",
+    "logo": "logo.svg",
+    "logoAlt": "Britline",
     "language": "en"
   },
   "colors": {
-    "primary": "#2563eb",
-    "secondary": "#64748b",
-    "accent": "#f59e0b"
+    "buttercream": "#F5F0E6",
+    "britishBlue": "#1E3A5F",
+    "accent": "#C75B39"
   },
   "seo": {
     "siteUrl": "https://example.com",
-    "defaultTitle": "Landing",
-    "defaultDescription": "One-page landing template.",
-    "ogImage": "/assets/images/og-image.jpg",
+    "defaultTitle": "Britline — Private Hire Transfers",
+    "defaultDescription": "Door-to-door and airport transfers. PCO licensed. Book your ride.",
+    "ogImage": "/assets/images/og.jpg",
     "twitterCard": "summary_large_image"
   },
   "nav": {
     "header": [
+      { "label": "Services", "url": "#services" },
+      { "label": "Our Fleet", "url": "#fleets" },
       { "label": "About", "url": "#about" },
+      { "label": "FAQ", "url": "#faq" },
       { "label": "Contact", "url": "#contact" },
-      { "label": "Book now", "url": "#", "isCta": true }
+      { "label": "Book now", "url": "#hero", "isCta": true }
     ],
     "footer": [
-      { "label": "Privacy", "url": "/privacy" },
-      { "label": "Imprint", "url": "/imprint" }
+      { "label": "Terms & Conditions", "url": "#", "modalId": "modal-terms" },
+      { "label": "Privacy Policy", "url": "#", "modalId": "modal-privacy" },
+      { "label": "Refund Policy", "url": "#", "modalId": "modal-refund" }
     ]
   },
   "contact": {
-    "phone": "",
-    "email": "hello@example.com",
-    "address": "",
-    "mapEmbedUrl": ""
-  }
+    "phone": "+44 7700 900000",
+    "whatsapp": "447700900000",
+    "email": "hello@britline.com",
+    "workingHours": "Mon–Sun 24/7"
+  },
+  "languages": ["en"],
+  "defaultLanguage": "en"
 }
