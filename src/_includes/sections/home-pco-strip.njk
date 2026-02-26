@@ -1,20 +1,7 @@
-<section class="section-padding bg-brand-blue text-white">
-  <div class="container-custom">
-    <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
-      <div class="flex-shrink-0 rounded-2xl bg-white/10 backdrop-blur px-5 py-3 border border-white/20">
-        <span class="font-semibold">{{ home.pcoStrip.badge }}</span>
-        <span class="opacity-90"> Licence number: {{ home.pcoStrip.licenceNumber }}</span>
-      </div>
-      <div class="flex-1 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
-        <div class="flex gap-4 md:flex-wrap md:justify-end min-w-max md:min-w-0">
-          {% for t in home.pcoStrip.testimonials %}
-          <div class="flex-shrink-0 w-64 rounded-2xl bg-white/10 backdrop-blur border border-white/20 p-4">
-            <p class="text-sm text-white/95 italic">&ldquo;{{ t.quote }}&rdquo;</p>
-            <p class="text-xs text-white/70 mt-2">— {{ t.author }}</p>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
+{# PCO badge strip: full width, tight vertical spacing #}
+<section class="w-full py-3 md:py-4 bg-white border-y border-gray-200">
+  <div class="w-full px-4 md:px-6 text-left">
+    <span class="font-semibold text-brand-blue">{{ home.pcoStrip.badge }}</span>
+    <span class="text-gray-600"> Licence number: {{ home.pcoStrip.licenceNumber }}</span>
   </div>
 </section>

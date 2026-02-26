@@ -1,6 +1,8 @@
 module.exports = function (eleventyConfig) {
   // Passthrough copy: src/assets → _site/assets
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  // Favicon: src/favicon.png → output root (Eleventy paths are relative to project root)
+  eleventyConfig.addPassthroughCopy({ "src/favicon.png": "favicon.png" });
 
   // For sitemap lastmod
   eleventyConfig.addGlobalData("buildDate", () => new Date().toISOString().slice(0, 10));

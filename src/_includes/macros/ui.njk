@@ -46,7 +46,7 @@
 
 {% macro button(label, href, variant) %}
 {% set v = variant | default('primary') %}
-<a href="{{ href }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-2.5 text-sm font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 {% if v == 'primary' %}bg-brand-accent text-white hover:opacity-90{% elif v == 'secondary' %}bg-brand-blue text-white hover:opacity-90{% else %}bg-brand-buttercream text-brand-blue border-2 border-brand-blue hover:bg-brand-blue hover:text-white{% endif %}">{{ label }}</a>
+<a href="{{ href }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-2.5 text-sm font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 {% if v == 'primary' %}bg-brand-blue text-white hover:opacity-90{% elif v == 'secondary' %}bg-brand-blue text-white hover:opacity-90{% else %}bg-brand-buttercream text-brand-blue border-2 border-brand-blue hover:bg-brand-blue hover:text-white{% endif %}">{{ label }}</a>
 {% endmacro %}
 
 {# Modal wrapper: id, title, content block (caller provides body) #}

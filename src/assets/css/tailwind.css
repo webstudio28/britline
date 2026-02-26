@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scroll for anchor links (e.g. nav #services, #about) */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* Brand defaults (overridden by base layout from site.config) */
 :root {
-  --color-brand-buttercream: #F5F0E6;
+  --color-brand-buttercream: #FDFBF7;
   --color-brand-blue: #1E3A5F;
-  --color-brand-accent: #C75B39;
+  --color-brand-accent: #2D5A3D;
 }
 
 /* Template utility classes (alignment docs) */
@@ -16,5 +23,25 @@
   }
   .section-padding {
     @apply py-16 md:py-24;
+  }
+
+  /* Mobile burger → X animation */
+  #mobile-menu-toggle.active .burger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  #mobile-menu-toggle.active .burger-line:nth-child(2) {
+    opacity: 0;
+  }
+  #mobile-menu-toggle.active .burger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  /* Hide scrollbar on mobile menu panel */
+  .mobile-menu-panel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .mobile-menu-panel::-webkit-scrollbar {
+    display: none;
   }
 }

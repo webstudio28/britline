@@ -3,6 +3,9 @@ module.exports = {
   content: ["src/**/*.{njk,html,js}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Montserrat", "sans-serif"],
+      },
       colors: {
         brand: {
           buttercream: "var(--color-brand-buttercream)",

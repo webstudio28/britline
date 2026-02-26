@@ -1,14 +1,14 @@
 {
   "brand": {
     "name": "Britline",
-    "logo": "logo.svg",
+    "logo": "logo-light.png",
     "logoAlt": "Britline",
     "language": "en"
   },
   "colors": {
-    "buttercream": "#F5F0E6",
+    "buttercream": "#FDFBF7",
     "britishBlue": "#1E3A5F",
-    "accent": "#C75B39"
+    "accent": "#2D5A3D"
   },
   "seo": {
     "siteUrl": "https://example.com",
@@ -19,6 +19,7 @@
   },
   "nav": {
     "header": [
+      { "label": "Home", "url": "#hero" },
       { "label": "Services", "url": "#services" },
       { "label": "Our Fleet", "url": "#fleets" },
       { "label": "About", "url": "#about" },

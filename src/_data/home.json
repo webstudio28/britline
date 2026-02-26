@@ -95,13 +95,15 @@
   "about": {
     "eyebrow": "About us",
     "title": "Who We Are",
+    "description": "Reliable private hire and transfers across London and the UK.",
     "paragraph1": "We are a London-based private hire operator with a focus on reliability and comfort. Our team of PCO-licensed drivers and well-maintained vehicles are here to make your journey smooth.",
     "paragraph2": "Whether you need an airport transfer, a door-to-door ride, or hourly hire, we tailor our service to your schedule. Quality and safety come first.",
     "image": "about-img.jpg",
     "features": [
       { "title": "PCO licensed", "text": "Fully compliant with TfL Private Hire regulations." },
       { "title": "Fixed quotes", "text": "Transparent pricing with no hidden fees." }
-    ]
+    ],
+    "cta": { "label": "Get in touch", "url": "#contact" }
   },
   "faq": {
     "title": "Frequently Asked Questions",
