@@ -22,6 +22,17 @@
   .container-custom {
     @apply max-w-screen-xl mx-auto px-4 md:px-6;
   }
+  /* Services strip: left aligned with container-custom, right to edge */
+  .services-strip-inner {
+    padding-left: max(1rem, calc((100vw - 80rem) / 2 + 1rem));
+    padding-right: 1rem;
+  }
+  @media (min-width: 768px) {
+    .services-strip-inner {
+      padding-left: max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem));
+      padding-right: 1.5rem;
+    }
+  }
   .section-padding {
     @apply py-16 md:py-24;
   }
@@ -45,4 +56,23 @@
   .mobile-menu-panel::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Hide scrollbar on horizontal strips (outside @layer so it wins) */
+.drag-scroll.scrollbar-hide,
+.scrollbar-hide {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  overflow-y: hidden;
+}
+.drag-scroll.scrollbar-hide::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+.drag-scroll.scrollbar-hide::-webkit-scrollbar-track,
+.scrollbar-hide::-webkit-scrollbar-track {
+  display: none !important;
 }

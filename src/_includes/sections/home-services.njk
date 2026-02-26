@@ -1,15 +1,29 @@
 <section class="section-padding bg-brand-buttercream" id="services">
   <div class="container-custom">
-    {% from "macros/ui.njk" import sectionHeader, button %}
+    {% from "macros/ui.njk" import sectionHeader %}
     {% set s = home.services %}
-    {{ sectionHeader(s.eyebrow, s.title, s.subtitle) }}
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+    <div class="flex flex-nowrap items-center justify-between gap-4">
+      <div class="min-w-0 flex-1">
+        {{ sectionHeader(s.eyebrow, s.title, s.subtitle) }}
+      </div>
+      <div class="flex items-center gap-2 shrink-0" aria-hidden="true">
+        <button type="button" id="services-scroll-prev" class="services-nav-btn w-9 h-9 rounded-full border-2 border-brand-blue text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 disabled:opacity-40 disabled:pointer-events-none" aria-label="Scroll services left">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button type="button" id="services-scroll-next" class="services-nav-btn w-9 h-9 rounded-full border-2 border-brand-blue text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 disabled:opacity-40 disabled:pointer-events-none" aria-label="Scroll services right">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="services-strip" class="w-full drag-scroll overflow-x-auto pb-2 cursor-grab active:cursor-grabbing select-none scrollbar-hide" data-step="one-card">
+    <div class="flex gap-4 services-strip-inner min-w-max">
       {% for item in s.items %}
-      <div class="flex flex-col">
-        <img src="{{ ('/assets/images/' + item.image) | url }}" alt="{{ item.title }}" class="aspect-square w-full object-cover rounded-2xl mb-4" loading="lazy">
-        <h3 class="text-xl font-bold text-brand-blue mb-2">{{ item.title }}</h3>
-        <p class="text-brand-blue/80 mb-4 flex-1">{{ item.description }}</p>
-        <a href="#contact" class="inline-flex items-center justify-center rounded-2xl border-2 border-brand-blue text-brand-blue font-semibold px-4 py-2 text-sm hover:bg-brand-blue hover:text-white transition-colors w-fit">{{ item.cta }}</a>
+      <div class="flex flex-col flex-shrink-0 w-64 md:w-72">
+        <img src="{{ ('/assets/images/' ~ item.image) | url }}" alt="{{ item.title }}" class="aspect-square w-full object-cover rounded-xl mb-3" loading="lazy">
+        <h3 class="text-base font-bold text-brand-blue mb-1">{{ item.title }}</h3>
+        <p class="text-sm text-brand-blue/80 mb-3 flex-1 line-clamp-2">{{ item.description }}</p>
+        <a href="#contact" class="inline-flex items-center justify-center rounded-xl border-2 border-brand-blue text-brand-blue font-semibold px-3 py-1.5 text-xs hover:bg-brand-blue hover:text-white transition-colors w-fit">{{ item.cta }}</a>
       </div>
       {% endfor %}
     </div>
