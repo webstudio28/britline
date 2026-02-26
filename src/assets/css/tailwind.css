@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scroll for anchor links (e.g. nav #services, #about) */
+/* Smooth scroll for anchor links + offset so target sits a bit lower (space above) */
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
   }
 }
 

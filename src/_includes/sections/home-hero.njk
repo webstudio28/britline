@@ -8,10 +8,10 @@
       <div class="text-left max-w-xl">
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">{{ home.hero.headline }}</h1>
         <p class="text-lg text-white/90 mb-6">{{ home.hero.paragraph }}</p>
-        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white hover:opacity-90" aria-label="Chat on WhatsApp">
+        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white/85 backdrop-blur-md rounded-2xl px-5 py-3 shadow-lg border border-white/30 text-[#128C7E] hover:bg-white/95 w-fit" aria-label="Chat on WhatsApp">
           {% from "macros/ui.njk" import icon %}
           {{ icon('whatsapp') }}
-          <span>WhatsApp</span>
+          <span class="font-semibold">WhatsApp</span>
         </a>
       </div>
       <div class="w-full max-w-md bg-white/95 rounded-3xl shadow-xl p-6 md:p-8 text-brand-blue">
