@@ -7,9 +7,10 @@
     "dev": "npm start",
     "serve": "eleventy --serve",
     "build": "npm run css:build && eleventy",
+    "build:cpanel": "node scripts/deploy-cpanel.js",
     "css:build": "tailwindcss -i ./src/assets/css/tailwind.css -o ./src/assets/css/styles.css --minify",
     "css:watch": "tailwindcss -i ./src/assets/css/tailwind.css -o ./src/assets/css/styles.css --watch",
-    "deploy": "echo 'Use GitHub Actions instead'",
+    "deploy": "node scripts/deploy-cpanel.js",
     "postinstall": "node scripts/copy-pdfjs.js"
   },
   "devDependencies": {
