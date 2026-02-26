@@ -97,15 +97,18 @@
       openModal("modal-service-detail");
       return;
     }
-    if (e.target.matches("[data-modal-open]")) {
+    var opener = e.target.closest("[data-modal-open]");
+    if (opener) {
       e.preventDefault();
-      var id = e.target.getAttribute("data-modal-open") || e.target.getAttribute("href");
+      var id = opener.getAttribute("data-modal-open") || opener.getAttribute("href");
       if (id && id.startsWith("#")) id = id.slice(1);
       if (id) openModal(id);
+      return;
     }
-    if (e.target.matches("[data-modal-close]")) {
+    var closer = e.target.closest("[data-modal-close]");
+    if (closer) {
       e.preventDefault();
-      var modal = e.target.closest("[aria-modal=true]");
+      var modal = closer.closest("[aria-modal=true]");
       if (modal) closeModal(modal.id);
     }
   });
