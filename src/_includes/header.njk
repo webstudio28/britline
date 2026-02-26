@@ -25,9 +25,9 @@
 </header>
 
 <!-- Backdrop: blurred + darkened when menu open -->
-<div id="mobile-menu-backdrop" class="fixed inset-0 z-[44] lg:hidden bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true"></div>
+<div id="mobile-menu-backdrop" class="fixed inset-0 z-[44] lg:hidden bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true" hidden></div>
 <!-- Mobile menu: 85% width from right, white bg, close button -->
-<div id="mobile-menu" class="mobile-menu-panel fixed top-0 right-0 bottom-0 w-[85%] max-w-md z-[45] lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out bg-white shadow-2xl" aria-hidden="true">
+<div id="mobile-menu" class="mobile-menu-panel fixed top-0 right-0 bottom-0 w-[85%] max-w-md z-[45] lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out bg-white shadow-2xl" aria-hidden="true" hidden>
   <div class="h-full flex flex-col pt-16 pb-8 px-6 overflow-y-auto">
     <button type="button" id="mobile-menu-close" class="absolute top-4 right-4 p-2 rounded-full text-brand-blue hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" aria-label="Close menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>

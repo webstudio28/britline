@@ -23,8 +23,8 @@
         <img src="{{ ('/assets/images/' ~ item.image) | url }}" alt="{{ item.title }}" class="aspect-square w-full object-cover rounded-xl mb-3" loading="lazy">
         <h3 class="text-base font-bold text-brand-blue">{{ item.title }}</h3>
         <p class="text-sm text-brand-blue/80 mb-3 flex-1 line-clamp-2">{{ item.description }}</p>
-        <div class="flex items-center justify-between gap-2 flex-wrap">
-          <a href="#contact" class="inline-flex items-center justify-center rounded-xl bg-brand-blue text-white font-semibold px-3 py-1.5 text-xs hover:bg-brand-blue/90 transition-colors w-fit">{{ item.cta }}</a>
+        <div class="flex items-center gap-3 flex-wrap">
+          <a href="#contact" class="inline-flex items-center justify-center rounded-xl bg-brand-blue text-white font-semibold px-3 py-2.5 text-xs hover:bg-brand-blue/90 transition-colors w-fit">{{ item.cta }}</a>
           <button type="button" class="service-see-more text-brand-blue font-semibold text-sm hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 rounded" aria-label="Read full description of {{ item.title }}">See more</button>
         </div>
         {# Full description in DOM for SEO; hidden from visual users, shown in modal on "See more" #}

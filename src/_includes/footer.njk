@@ -1,18 +1,20 @@
-<footer class="bg-brand-blue text-white section-padding">
+<footer class="bg-[#0c1222] text-white py-8 md:py-10">
   <div class="container-custom">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <p class="font-semibold text-lg">{{ site.brand.name }}</p>
-      <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Legal">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+      <a href="{{ '/' | url }}" class="inline-block" aria-label="{{ site.brand.name }} home">
+        <img src="{{ '/assets/images/logo-dark.png' | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-8 w-auto opacity-95 hover:opacity-100 transition-opacity">
+      </a>
+      <nav class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-white/70 hover:text-white" aria-label="Legal">
         {% for item in site.nav.footer %}
           {% if item.modalId %}
-          <button type="button" class="text-white/90 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded" data-modal-open="{{ item.modalId }}">{{ item.label }}</button>
+          <button type="button" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded" data-modal-open="{{ item.modalId }}">{{ item.label }}</button>
           {% else %}
-          <a href="{{ item.url | url }}" class="text-white/90 hover:text-white">{{ item.label }}</a>
+          <a href="{{ item.url | url }}">{{ item.label }}</a>
           {% endif %}
         {% endfor %}
       </nav>
     </div>
-    <p class="mt-6 text-white/70 text-sm">&copy; {{ site.currentYear }} {{ site.brand.name }}. All rights reserved.</p>
+    <p class="mt-5 text-white/50 text-xs">&copy; {{ site.currentYear }} {{ site.brand.name }}</p>
   </div>
 </footer>
 

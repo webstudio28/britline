@@ -1,6 +1,7 @@
 (function () {
+  var wrapper = document.querySelector(".popular-transfers-strip-wrapper");
   var strip = document.querySelector(".popular-transfers-strip");
-  if (!strip) return;
+  if (!wrapper || !strip) return;
 
   var setEl = strip.querySelector(".popular-transfers-strip-set");
   if (!setEl) return;
@@ -18,39 +19,41 @@
 
   function tick() {
     if (!dragging) {
-      position -= speed;
-      if (position < -setWidth) position += setWidth;
-      if (position > 0) position -= setWidth;
+      position += speed;
+      if (position >= setWidth) position -= setWidth;
     }
-    strip.style.transform = "translateX(" + position + "px)";
+    wrapper.scrollLeft = position;
     requestAnimationFrame(tick);
   }
 
   function onDown(e) {
     dragging = true;
     startX = getClientX(e);
-    startPos = position;
-    strip.style.cursor = "grabbing";
+    startPos = wrapper.scrollLeft;
+    wrapper.style.cursor = "grabbing";
   }
 
   function onMove(e) {
     if (!dragging) return;
     var x = getClientX(e);
-    position = startPos + (x - startX);
+    position = startPos - (x - startX);
+    while (position < 0) position += setWidth;
+    while (position >= setWidth) position -= setWidth;
+    wrapper.scrollLeft = position;
   }
 
   function onUp() {
     dragging = false;
-    strip.style.cursor = "grab";
-    while (position < -setWidth) position += setWidth;
-    while (position > 0) position -= setWidth;
+    wrapper.style.cursor = "grab";
+    position = wrapper.scrollLeft % setWidth;
   }
 
-  strip.style.cursor = "grab";
-  strip.style.willChange = "transform";
+  wrapper.style.cursor = "grab";
+  // Ensure wrapper is the scroll container.
+  wrapper.scrollLeft = 0;
 
-  strip.addEventListener("mousedown", onDown);
-  strip.addEventListener("touchstart", onDown, { passive: true });
+  wrapper.addEventListener("mousedown", onDown);
+  wrapper.addEventListener("touchstart", onDown, { passive: true });
   window.addEventListener("mousemove", onMove);
   window.addEventListener("touchmove", onMove, { passive: true });
   window.addEventListener("mouseup", onUp);

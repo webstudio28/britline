@@ -1,10 +1,10 @@
-<section class="section-padding bg-brand-buttercream" id="contact">
+<section class="section-padding pb-8 md:pb-10 bg-brand-buttercream" id="contact">
   <div class="container-custom">
     {% from "macros/ui.njk" import sectionHeader, icon %}
     {% set c = home.contact %}
     {{ sectionHeader('', c.title, c.subtitle) }}
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-12">
-      <div>
+      <div class="bg-white rounded-3xl shadow-lg p-6 md:p-8">
         <ul class="space-y-4 text-brand-blue">
           <li class="flex items-center gap-3">
             {{ icon('phone') }}
@@ -23,10 +23,8 @@
             <span>{{ site.contact.workingHours }}</span>
           </li>
         </ul>
-        <div class="mt-10">
-          <h3 class="text-lg font-semibold text-brand-blue mb-4">{{ c.driverCta.title }}</h3>
-          <button type="button" class="inline-flex items-center gap-2 rounded-2xl bg-brand-blue text-white font-semibold px-5 py-2.5 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" data-modal-open="modal-driver" aria-haspopup="dialog">
-            {{ icon('driver') }}
+        <div class="mt-8">
+          <button type="button" class="inline-flex items-center justify-center rounded-2xl bg-brand-blue text-white font-semibold px-5 py-2.5 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 transition-opacity" data-modal-open="modal-driver" aria-haspopup="dialog">
             {{ c.driverCta.buttonLabel }}
           </button>
         </div>

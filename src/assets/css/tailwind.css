@@ -7,6 +7,28 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 3rem;
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  @supports (overflow: clip) {
+    html {
+      overflow-x: clip;
+    }
+    body {
+      overflow-x: clip;
+    }
+  }
+}
+
+/* When a modal is open, clamp body so the page can't stretch horizontally */
+body.modal-open {
+  overflow-x: hidden !important;
+}
+@supports (overflow: clip) {
+  body.modal-open {
+    overflow-x: clip !important;
   }
 }
 
@@ -37,6 +59,28 @@
     @apply py-16 md:py-24;
   }
 
+  /* Popular transfers strip: transformed marquee can cause horizontal overflow on mobile */
+  .popular-transfers-strip-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    contain: paint;
+    /* allow programmatic scrolling without showing scrollbars */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    touch-action: pan-y;
+  }
+  .popular-transfers-strip-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  @supports (overflow: clip) {
+    .popular-transfers-strip-wrapper {
+      overflow-x: clip;
+    }
+  }
+
   /* Mobile burger → X animation */
   #mobile-menu-toggle.active .burger-line:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
@@ -52,6 +96,7 @@
   .mobile-menu-panel {
     scrollbar-width: none;
     -ms-overflow-style: none;
+    contain: paint;
   }
   .mobile-menu-panel::-webkit-scrollbar {
     display: none;
@@ -75,4 +120,9 @@
 .drag-scroll.scrollbar-hide::-webkit-scrollbar-track,
 .scrollbar-hide::-webkit-scrollbar-track {
   display: none !important;
+}
+
+/* Keep horizontal swipes inside strips (avoid page panning) */
+.drag-scroll {
+  overscroll-behavior-x: contain;
 }

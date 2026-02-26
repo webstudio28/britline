@@ -33,15 +33,22 @@
       var backdrop = document.getElementById('mobile-menu-backdrop');
       var body = document.body;
       var links = document.querySelectorAll('.mobile-menu-link');
+      var closeTimer = null;
 
       function openMenu() {
+        if (closeTimer) {
+          window.clearTimeout(closeTimer);
+          closeTimer = null;
+        }
         toggle.classList.add('active');
         toggle.setAttribute('aria-expanded', 'true');
         toggle.setAttribute('aria-label', 'Close menu');
+        menu.removeAttribute('hidden');
         menu.classList.remove('translate-x-full');
         menu.classList.add('translate-x-0');
         menu.setAttribute('aria-hidden', 'false');
         if (backdrop) {
+          backdrop.removeAttribute('hidden');
           backdrop.classList.remove('opacity-0', 'pointer-events-none');
           backdrop.classList.add('opacity-100', 'pointer-events-auto');
           backdrop.setAttribute('aria-hidden', 'false');
@@ -62,6 +69,13 @@
           backdrop.setAttribute('aria-hidden', 'true');
         }
         body.style.overflow = '';
+
+        // After transition completes, fully hide to prevent any layout overflow on small screens
+        closeTimer = window.setTimeout(function () {
+          menu.setAttribute('hidden', '');
+          if (backdrop) backdrop.setAttribute('hidden', '');
+          closeTimer = null;
+        }, 320);
       }
 
       var closeBtn = document.getElementById('mobile-menu-close');
