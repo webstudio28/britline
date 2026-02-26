@@ -119,9 +119,35 @@
       if (!strip || !prevBtn || !nextBtn) return;
       var inner = strip.querySelector('.flex');
       var firstCard = inner && inner.querySelector('div');
-      var gap = 16;
+      var gap = 32;
       function getStep() {
-        return firstCard ? firstCard.offsetWidth + gap : 280;
+        return firstCard ? firstCard.offsetWidth + gap : 304;
+      }
+      function updateButtons() {
+        prevBtn.disabled = strip.scrollLeft <= 0;
+        nextBtn.disabled = strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 1;
+      }
+      prevBtn.addEventListener('click', function () {
+        strip.scrollBy({ left: -getStep(), behavior: 'smooth' });
+      });
+      nextBtn.addEventListener('click', function () {
+        strip.scrollBy({ left: getStep(), behavior: 'smooth' });
+      });
+      strip.addEventListener('scroll', updateButtons);
+      updateButtons();
+    })();
+
+    // Fleet strip: scroll by one card (prev/next buttons)
+    (function () {
+      var strip = document.getElementById('fleets-strip');
+      var prevBtn = document.getElementById('fleets-scroll-prev');
+      var nextBtn = document.getElementById('fleets-scroll-next');
+      if (!strip || !prevBtn || !nextBtn) return;
+      var inner = strip.querySelector('.flex');
+      var firstCard = inner && inner.querySelector('div');
+      var gap = 32;
+      function getStep() {
+        return firstCard ? firstCard.offsetWidth + gap : 304;
       }
       function updateButtons() {
         prevBtn.disabled = strip.scrollLeft <= 0;

@@ -29,6 +29,22 @@
   }
 
   document.addEventListener("click", function (e) {
+    var seeMore = e.target.closest(".service-see-more");
+    if (seeMore) {
+      e.preventDefault();
+      var card = seeMore.closest(".service-card");
+      if (!card) return;
+      var titleEl = card.querySelector("h3");
+      var bodyEl = card.querySelector(".service-full-description");
+      var title = titleEl ? titleEl.textContent.trim() : "Service";
+      var body = bodyEl ? bodyEl.textContent.trim() : "";
+      var modalTitle = document.getElementById("modal-service-detail-title");
+      var modalBody = document.getElementById("modal-service-detail-body");
+      if (modalTitle) modalTitle.textContent = title;
+      if (modalBody) modalBody.textContent = body;
+      openModal("modal-service-detail");
+      return;
+    }
     if (e.target.matches("[data-modal-open]")) {
       e.preventDefault();
       var id = e.target.getAttribute("data-modal-open") || e.target.getAttribute("href");
