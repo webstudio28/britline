@@ -20,12 +20,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+  <link rel="stylesheet" href="https://yourwebbooker.com/popup-widget/styles.css">
 </head>
 <body class="font-sans bg-brand-buttercream"{% if site and site.colors %} style="--color-brand-buttercream: {{ site.colors.buttercream }}; --color-brand-blue: {{ site.colors.britishBlue }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
   {% include "header.njk" %}
   {{ content | safe }}
   {% include "footer.njk" %}
 
+  <script src="https://yourwebbooker.com/popup-widget/webbooker.js" type="module"></script>
+  <popup-widget formid="6999be11755b2d06cd1c98dc" showtopbar="false" showlogo="false" language="en" widgettype="popup-text" headercolor="{% if site and site.colors %}{{ site.colors.britishBlue }}{% else %}#1E3A5F{% endif %}" textcolor="{% if site and site.colors %}{{ site.colors.britishBlue }}{% else %}#1E3A5F{% endif %}" backgroundcolor="{% if site and site.colors %}{{ site.colors.buttercream }}{% else %}#FDFBF7{% endif %}" buttonstyle="rounded"></popup-widget>
   <script>
     (function () {
       var toggle = document.getElementById('mobile-menu-toggle');
