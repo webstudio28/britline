@@ -21,10 +21,8 @@ jobs:
         run: npm ci
       - name: Build CSS
         run: npm run css:build
-      - name: Build (for britline subfolder)
+      - name: Build
         run: npm run build
-        env:
-          PATH_PREFIX: "/britline/"
 
       - name: Ensure cPanel secrets present
         env:
