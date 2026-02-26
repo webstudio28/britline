@@ -10,7 +10,7 @@
     "build:cpanel": "node scripts/deploy-cpanel.js",
     "css:build": "tailwindcss -i ./src/assets/css/tailwind.css -o ./src/assets/css/styles.css --minify",
     "css:watch": "tailwindcss -i ./src/assets/css/tailwind.css -o ./src/assets/css/styles.css --watch",
-    "deploy": "node scripts/deploy-cpanel.js",
+    "deploy": "echo 'Use GitHub Actions instead'",
     "postinstall": "node scripts/copy-pdfjs.js"
   },
   "devDependencies": {
