@@ -27,7 +27,7 @@
         </div>
         <div class="p-5 bg-white">
           <p class="text-brand-blue/90 mb-4 text-sm">{{ item.description }}</p>
-          <div class="grid grid-cols-2 gap-2 text-xs">
+          <div class="grid grid-cols-2 gap-2 text-xs mb-4">
             {% for feat in item.features %}
             <div class="flex items-center gap-2 text-brand-blue/80">
               {{ icon(feat.icon) }}
@@ -35,6 +35,7 @@
             </div>
             {% endfor %}
           </div>
+          <button type="button" onclick="typeof initMyOrder === 'function' && initMyOrder();" class="w-full rounded-xl bg-brand-blue text-white font-semibold px-3 py-2.5 text-xs hover:bg-brand-blue/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50">{{ f.cta | default('Book now') }}</button>
         </div>
       </div>
       {% endfor %}

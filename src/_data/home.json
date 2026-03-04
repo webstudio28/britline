@@ -1,7 +1,7 @@
 {
   "hero": {
-    "headline": "Comfortable Transfers When You Need Them",
-    "paragraph": "Door-to-door and airport transfers across London and the UK. PCO licensed, professional drivers.",
+    "headline": "Heathrow to London Taxi & Airport Transfers",
+    "paragraph": "Airport transfers from Heathrow to London and across the UK. Door-to-door, fixed price. PCO licensed drivers.",
     "booking": {
       "fromLabel": "From",
       "toLabel": "To",
@@ -25,7 +25,7 @@
     "subtitle": "From airport pickups to hourly hire — we cover it.",
     "items": [
       { "title": "Door to door", "description": "Pick-up and drop-off wherever you need.", "image": "svc-door.jpg", "cta": "Make inquiry", "fullDescription": "Our door-to-door transfer service takes you from any address to any destination across London and the UK. Whether you need a ride from your home to the office, from a hotel to a restaurant, or between any two points, we provide a comfortable and reliable journey with a professional PCO-licensed driver. We track your flight or schedule so we can adjust pick-up times if needed, and we offer fixed upfront pricing so there are no surprises. Book in advance or request a transfer for later the same day; we aim to accommodate your schedule while keeping the experience smooth and stress-free." },
-      { "title": "Airport transfers", "description": "Heathrow, Gatwick, Stansted and more.", "image": "svc-airport.jpg", "cta": "Make inquiry", "fullDescription": "We provide airport transfers to and from Heathrow, Gatwick, Stansted, Luton, London City and Southampton airports. Our drivers monitor your flight so we meet you at arrivals even if you are delayed, and for departures we plan the journey around current traffic to get you to the terminal on time. All airport trips are quoted as fixed prices so you know the cost before you travel. We handle luggage and use vehicles suited to the number of passengers and bags. Whether you are travelling alone or with family, arriving early in the morning or late at night, we offer a reliable and comfortable airport transfer service across the South East and beyond." },
+      { "title": "Airport transfers", "description": "Heathrow to London, Gatwick, Stansted and more.", "image": "svc-airport.jpg", "cta": "Make inquiry", "fullDescription": "We provide airport transfers to and from Heathrow, Gatwick, Stansted, Luton, London City and Southampton airports. Our Heathrow to London transfer and London Heathrow pickup service is one of our most popular routes: fixed price, flight tracking, and meet at arrivals. Our drivers monitor your flight so we meet you even if you are delayed, and for departures we plan the journey around traffic to get you to the terminal on time. All airport trips are quoted as fixed prices. We handle luggage and use vehicles suited to passengers and bags. Whether you are travelling alone or with family, we offer a reliable airport transfer service across the South East and beyond." },
       { "title": "Airport to cruise docks", "description": "Seamless connection to your ship.", "image": "svc-cruise.jpg", "cta": "Make inquiry", "fullDescription": "Our airport-to-cruise transfer service connects your flight with your ship at Southampton, Dover, Harwich or other cruise terminals. We collect you from any major London or regional airport and take you directly to the port in time for embarkation, or the other way around when you return. We allow plenty of time for traffic and check-in, and we use vehicles that can accommodate multiple suitcases and bags. Many of our clients book a single return transfer for the start and end of their cruise, so you can leave the logistics to us and focus on your trip. Prices are fixed in advance and we will track your flight so we are there when you land." },
       { "title": "Rent a car by hour", "description": "Flexible hourly hire with a dedicated driver.", "image": "svc-hourly.jpg", "cta": "Make inquiry", "fullDescription": "When you need a car and driver for a few hours rather than a single A-to-B trip, our hourly hire service is ideal. Use it for meetings, shopping, sightseeing, or any round trip where you want to be dropped off and collected later. You get a dedicated vehicle and driver for the duration you book, with a minimum hire period so the service stays efficient. We charge by the hour with a clear quote upfront, and you can extend on the day if needed. All our drivers are PCO-licensed and our vehicles are well maintained and comfortable, so you can work or relax while we take care of the driving and parking." },
       { "title": "Group transfers", "description": "Minibuses and larger vehicles for groups.", "image": "svc-group.jpg", "cta": "Make inquiry", "fullDescription": "For group travel we provide minibuses and larger vehicles so everyone can travel together. Ideal for family gatherings, corporate groups, school or sports trips, and events such as weddings or conferences. We can carry from around seven passengers up to larger groups, with space for luggage and equipment. All group transfers are quoted as a single price for the vehicle and journey, so you can split the cost as you like. We plan pick-ups and drop-offs to suit your itinerary and can include multiple stops if required. Our drivers are experienced in group travel and will help with loading and unloading so the trip runs smoothly from start to finish." },
@@ -36,6 +36,7 @@
     "eyebrow": "Our vehicles",
     "title": "Our Fleet",
     "subtitle": "From executive sedans to spacious minibuses.",
+    "cta": "Book now",
     "items": [
       {
         "name": "Luxury transfer",
@@ -96,7 +97,7 @@
   "about": {
     "eyebrow": "About us",
     "title": "Who We Are",
-    "description": "Reliable private hire and transfers across London and the UK.",
+    "description": "London Heathrow airport transfers and private hire across the UK.",
     "paragraph1": "We are a London-based private hire operator with a focus on reliability and comfort. Our team of PCO-licensed drivers and well-maintained vehicles are here to make your journey smooth.",
     "paragraph2": "Whether you need an airport transfer, a door-to-door ride, or hourly hire, we tailor our service to your schedule. Quality and safety come first.",
     "image": "about-img.jpg",
@@ -109,8 +110,8 @@
   "faq": {
     "title": "Frequently Asked Questions",
     "items": [
-      { "question": "How do I book a transfer?", "answer": "You can book via our website, by phone, or WhatsApp. We will confirm your booking and send you driver details before the journey." },
-      { "question": "Do you do airport pickups?", "answer": "Yes. We cover all major London airports including Heathrow, Gatwick, Stansted, Luton and London City." },
+      { "question": "How do I book a Heathrow to London transfer?", "answer": "You can book via our website, by phone, or WhatsApp. Tell us your flight details and London address and we'll give you a fixed quote. We'll confirm your booking and send driver details before the journey." },
+      { "question": "Do you do airport pickups?", "answer": "Yes. We cover all major London airports including Heathrow, Gatwick, Stansted, Luton and London City. We meet you at arrivals and track your flight for delays." },
       { "question": "Can I get a quote in advance?", "answer": "Yes. Contact us with your pickup and drop-off points and we will provide a fixed quote." },
       { "question": "What if my flight is delayed?", "answer": "We track your flight and adjust pickup time at no extra cost. Keep your phone on so we can reach you." },
       { "question": "Do you provide child seats?", "answer": "Yes. Please request when booking and we will fit an appropriate child seat at no extra charge." },
@@ -146,14 +147,15 @@
     }
   },
   "footerCta": {
-    "title": "Ready to Book?",
-    "description": "Get a fixed quote or book your transfer now. We're available 24/7.",
+    "title": "Book Your Heathrow to London Transfer",
+    "description": "Fixed price airport transfer — Heathrow, Gatwick and more. Get a quote or book now. Available 24/7.",
     "buttonLabel": "Get a quote",
     "buttonUrl": "#contact",
     "image": "cta-bg.jpg"
   },
   "popularTransfers": {
-    "title": "Popular Transfers",
+    "title": "Popular Airport Transfers",
+    "subtitle": "Heathrow, Gatwick and more — fixed price, meet & greet.",
     "items": [
       { "label": "Heathrow → Central London" },
       { "label": "Gatwick → London" },

@@ -10,7 +10,7 @@
         <p class="text-white/90">{{ home.footerCta.description }}</p>
       </div>
       <div class="relative z-10">
-        <a href="{{ home.footerCta.buttonUrl }}" class="inline-flex items-center justify-center rounded-2xl bg-white text-brand-blue font-semibold px-8 py-3 shadow-lg hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50">{{ home.footerCta.buttonLabel }}</a>
+        <button type="button" onclick="typeof initMyOrder === 'function' && initMyOrder();" class="inline-flex items-center justify-center rounded-2xl bg-white text-brand-blue font-semibold px-8 py-3 shadow-lg hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50">{{ home.footerCta.buttonLabel }}</button>
       </div>
     </div>
   </div>
