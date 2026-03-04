@@ -1,4 +1,4 @@
-<section class="section-padding bg-brand-buttercream" id="services">
+<section class=" section-padding bg-brand-buttercream overflow-x-hidden max-w-full" id="services">
   <div class="container-custom">
     {% from "macros/ui.njk" import sectionHeader %}
     {% set s = home.services %}
@@ -16,10 +16,10 @@
       </div>
     </div>
   </div>
-  <div id="services-strip" class="w-full drag-scroll overflow-x-auto pb-2 cursor-grab active:cursor-grabbing select-none scrollbar-hide" data-step="one-card">
-    <div class="flex gap-8 services-strip-inner min-w-max">
+  <div id="services-strip" class="w-full min-w-0 drag-scroll overflow-x-auto pb-2 cursor-grab active:cursor-grabbing select-none scrollbar-hide" data-step="one-card">
+    <div class="flex gap-8 services-strip-inner">
       {% for item in s.items %}
-      <div class="flex flex-col flex-shrink-0 w-64 md:w-72 service-card">
+      <div class="relative flex flex-col flex-shrink-0 w-64 md:w-72 overflow-hidden service-card">
         <img src="{{ ('/assets/images/' ~ item.image) | url }}" alt="{{ item.title }}" class="aspect-square w-full object-cover rounded-xl mb-3" loading="lazy">
         <h3 class="text-base font-bold text-brand-blue">{{ item.title }}</h3>
         <p class="text-sm text-brand-blue/80 mb-3 flex-1 line-clamp-2">{{ item.description }}</p>
@@ -31,20 +31,6 @@
         <div class="service-full-description sr-only">{{ item.fullDescription }}</div>
       </div>
       {% endfor %}
-    </div>
-  </div>
-
-  {# Service detail modal: title and body set by JS when "See more" is clicked; content is also in sr-only above for crawlers #}
-  <div id="modal-service-detail" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" aria-labelledby="modal-service-detail-title" role="dialog" hidden>
-    <div class="absolute inset-0 bg-black/50" data-modal-close aria-label="Close"></div>
-    <div class="relative bg-white rounded-3xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col">
-      <div class="flex items-center justify-between p-6 border-b border-gray-200">
-        <h2 id="modal-service-detail-title" class="text-xl font-bold text-brand-blue">Service</h2>
-        <button type="button" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" data-modal-close aria-label="Close modal">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div id="modal-service-detail-body" class="p-6 overflow-y-auto flex-1 text-brand-blue/90"></div>
     </div>
   </div>
 </section>
