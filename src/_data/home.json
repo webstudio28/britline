@@ -41,57 +41,73 @@
     "cta": "Book now",
     "items": [
       {
-        "name": "Luxury transfer",
-        "description": "Premium vehicles for special occasions.",
-        "image": "fleet-lux.jpg",
-        "luxury": true,
-        "features": [
-          { "icon": "seat", "label": "Leather interior" },
-          { "icon": "wifi", "label": "Wi‑Fi" },
-          { "icon": "water", "label": "Complimentary water" },
-          { "icon": "charger", "label": "USB charging" },
-          { "icon": "space", "label": "Extra legroom" },
-          { "icon": "shield", "label": "Premium insurance" }
-        ]
-      },
-      {
-        "name": "Executive sedan",
-        "description": "Comfortable saloons for business or leisure.",
+        "name": "Sedan",
+        "description": "Perfect for business travellers seeking comfort and professionalism.",
         "image": "fleet-sedan.jpg",
         "features": [
-          { "icon": "seat", "label": "4 seats" },
-          { "icon": "luggage", "label": "2 large bags" },
-          { "icon": "ac", "label": "Climate control" },
-          { "icon": "charger", "label": "USB" },
-          { "icon": "child", "label": "Child seat option" },
-          { "icon": "card", "label": "Card payment" }
+          { "icon": "seat", "label": "Comfortable seating for up to 4 passengers" },
+          { "icon": "ac", "label": "Quiet and smooth ride" },
+          { "icon": "shield", "label": "Professional driver" },
+          { "icon": "ac", "label": "Air conditioning" },
+          { "icon": "charger", "label": "Phone charging available" }
         ]
       },
       {
         "name": "Estate",
-        "description": "Extra boot space for luggage and kit.",
+        "description": "Ideal for travellers with extra luggage.",
         "image": "fleet-estate.jpg",
         "features": [
-          { "icon": "seat", "label": "4 seats" },
-          { "icon": "luggage", "label": "4 large bags" },
-          { "icon": "ac", "label": "Climate control" },
-          { "icon": "charger", "label": "USB" },
-          { "icon": "child", "label": "Child seat option" },
-          { "icon": "card", "label": "Card payment" }
+          { "icon": "luggage", "label": "Extra luggage space" },
+          { "icon": "seat", "label": "Comfortable seating for up to 4 passengers" },
+          { "icon": "luggage", "label": "Ideal for airport transfers" },
+          { "icon": "ac", "label": "Air conditioning" },
+          { "icon": "ac", "label": "Smooth and quiet ride" },
+          { "icon": "shield", "label": "Professional drivers" },
+          { "icon": "charger", "label": "Phone charging available" }
         ]
       },
-      
       {
-        "name": "Minivan",
-        "description": "Ideal for groups and events.",
+        "name": "Executive",
+        "description": "Premium vehicles offering the high level of comfort and style.",
+        "image": "fleet-sedan.jpg",
+        "features": [
+          { "icon": "seat", "label": "Premium leather interior" },
+          { "icon": "shield", "label": "Professional chauffeur service" },
+          { "icon": "space", "label": "Extra legroom and comfort" },
+          { "icon": "water", "label": "Complimentary bottled water" },
+          { "icon": "charger", "label": "Phone charging ports" },
+          { "icon": "wifi", "label": "Free wi-fi access" },
+          { "icon": "ac", "label": "Climate control" }
+        ]
+      },
+      {
+        "name": "Luxury",
+        "description": "Premium vehicles offering the highest level of comfort and style.",
+        "image": "fleet-lux.jpg",
+        "luxury": true,
+        "features": [
+          { "icon": "shield", "label": "Highest vehicle class" },
+          { "icon": "seat", "label": "Premium leather interior" },
+          { "icon": "shield", "label": "Professional chauffeur service" },
+          { "icon": "space", "label": "Extra legroom and comfort" },
+          { "icon": "water", "label": "Complimentary bottled water" },
+          { "icon": "charger", "label": "Phone charging ports" },
+          { "icon": "ac", "label": "Climate control" },
+          { "icon": "wifi", "label": "Free wi-fi access" }
+        ]
+      },
+      {
+        "name": "MPV/MPV+",
+        "description": "Spacious vehicles perfect for families and groups.",
         "image": "fleet-van.jpg",
         "features": [
-          { "icon": "seat", "label": "8 seats" },
-          { "icon": "luggage", "label": "8+ bags" },
-          { "icon": "ac", "label": "Climate control" },
-          { "icon": "charger", "label": "Multiple USB" },
-          { "icon": "child", "label": "Child seats" },
-          { "icon": "card", "label": "Card payment" }
+          { "icon": "seat", "label": "Seats up to 8 passengers" },
+          { "icon": "luggage", "label": "Large luggage capacity" },
+          { "icon": "luggage", "label": "Ideal for group airport transfers" },
+          { "icon": "seat", "label": "Comfortable seating" },
+          { "icon": "ac", "label": "Air conditioning" },
+          { "icon": "child", "label": "Child seats available upon request" },
+          { "icon": "wifi", "label": "Free wi-fi access" }
         ]
       }
     ]

@@ -25,9 +25,9 @@
           <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
           <span class="absolute top-4 left-4 text-white font-bold text-lg drop-shadow">{{ item.name }}</span>
         </div>
-        <div class="p-5 bg-white">
+        <div class="p-5 bg-white flex flex-col flex-1">
           <p class="text-brand-blue/90 mb-4 text-sm">{{ item.description }}</p>
-          <div class="grid grid-cols-2 gap-2 text-xs mb-4">
+          <div class="grid grid-cols-1 gap-2 text-xs mb-4">
             {% for feat in item.features %}
             <div class="flex items-center gap-2 text-brand-blue/80">
               {{ icon(feat.icon) }}
@@ -35,7 +35,7 @@
             </div>
             {% endfor %}
           </div>
-          <button type="button" onclick="typeof initMyOrder === 'function' && initMyOrder();" class="w-full rounded-xl bg-brand-blue text-white font-semibold px-3 py-2.5 text-xs hover:bg-brand-blue/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50">{{ f.cta | default('Book now') }}</button>
+          <button type="button" onclick="typeof initMyOrder === 'function' && initMyOrder();" class="w-full mt-auto rounded-xl bg-brand-blue text-white font-semibold px-3 py-2.5 text-xs hover:bg-brand-blue/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50">{{ f.cta | default('Book now') }}</button>
         </div>
       </div>
       {% endfor %}
