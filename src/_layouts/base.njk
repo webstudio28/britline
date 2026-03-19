@@ -80,9 +80,34 @@
   <script>
     (function () {
       var root = document.documentElement;
+      var styleId = "wb-mobile-modal-override";
+      var mobileCss = "@media (max-width: 767px) { .overlay.nsm-overlay-open{display:flex !important;align-items:center !important;justify-content:center !important;padding:0 !important;} .nsm-dialog{width:95vw !important;max-width:95vw !important;height:80vh !important;max-height:80vh !important;min-height:0 !important;margin:0 !important;display:flex !important;align-items:stretch !important;} .nsm-content{width:100% !important;height:100% !important;max-height:100% !important;margin:0 !important;overflow:auto !important;border-radius:12px !important;} }";
+
+      function ensureWidgetModalStyles() {
+        var host = document.querySelector("popup-widget");
+        if (!host) return;
+
+        // If widget uses open shadow DOM, inject there.
+        if (host.shadowRoot && !host.shadowRoot.getElementById(styleId)) {
+          var s1 = document.createElement("style");
+          s1.id = styleId;
+          s1.textContent = mobileCss;
+          host.shadowRoot.appendChild(s1);
+        }
+
+        // Fallback: if modal is rendered in light DOM, inject globally.
+        if (!document.getElementById(styleId)) {
+          var s2 = document.createElement("style");
+          s2.id = styleId;
+          s2.textContent = mobileCss;
+          document.head.appendChild(s2);
+        }
+      }
+
       function syncWebBookerScrollLock() {
         var open = document.body.classList.contains("dialog-open");
         if (open) {
+          ensureWidgetModalStyles();
           root.style.overflow = "hidden";
           root.style.overscrollBehavior = "none";
         } else {
@@ -95,6 +120,8 @@
         mo.observe(document.body, { attributes: true, attributeFilter: ["class"] });
         syncWebBookerScrollLock();
       }
+      // Late init: widget script may hydrate after this script runs.
+      window.setTimeout(ensureWidgetModalStyles, 1200);
     })();
   </script>
   <script>

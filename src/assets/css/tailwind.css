@@ -141,6 +141,33 @@ html:has(body.dialog-open) {
   overscroll-behavior-x: contain;
 }
 
+/* Web Booker modal sizing on mobile */
+@media (max-width: 767px) {
+  body.dialog-open .overlay.nsm-overlay-open {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  body.dialog-open .nsm-dialog {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    height: 80vh !important;
+    max-height: 80vh !important;
+    margin: 0 !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  body.dialog-open .nsm-dialog .nsm-content {
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow: auto !important;
+  }
+}
+
 /* Floating WhatsApp button */
 .whatsapp-float {
   position: fixed;
