@@ -12,8 +12,8 @@
         <p class="text-base text-white/80 mb-6">{{ home.hero.subparagraph }}</p>
         {% endif %}
         <div class="flex flex-wrap items-center gap-3">
-          <button type="button" onclick="typeof initMyOrder === 'function' && initMyOrder();" class="inline-flex items-center justify-center rounded-2xl bg-brand-blue text-white font-bold text-base md:text-lg uppercase tracking-wide py-4 md:py-5 px-8 md:px-10 shadow-2xl hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50">{{ home.hero.booking.buttonLabel }}</button>
-          <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white/85 backdrop-blur-md rounded-2xl px-5 py-3 shadow-lg border border-white/30 text-[#128C7E] hover:bg-white/95 w-fit" aria-label="Chat on WhatsApp">
+          <button type="button" onclick="typeof initMyOrder === 'function' && initMyOrder();" class="inline-flex w-full md:w-auto items-center justify-center rounded-2xl bg-brand-blue text-white font-semibold px-20 py-4 border-2 border-gray-500 shadow-[0_10px_30px_rgba(0,0,0,0.45)] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50">{{ home.hero.booking.buttonLabel }}</button>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 bg-white/85 backdrop-blur-md rounded-2xl px-5 py-3 shadow-lg border border-white/30 text-[#128C7E] hover:bg-white/95 w-fit" aria-label="Chat on WhatsApp">
             {% from "macros/ui.njk" import icon %}
             {{ icon('whatsapp') }}
             <span class="font-semibold">WhatsApp</span>
