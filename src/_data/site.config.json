@@ -1,8 +1,8 @@
 {
   "brand": {
-    "name": "Britline",
+    "name": "Britline Transfers",
     "logo": "logo-light.png",
-    "logoAlt": "Britline",
+    "logoAlt": "Britline Transfers",
     "language": "en"
   },
   "colors": {
@@ -11,7 +11,7 @@
     "accent": "#2D5A3D"
   },
   "seo": {
-    "siteUrl": "https://example.com",
+    "siteUrl": "https://britlinetransfers.co.uk",
     "defaultTitle": "Heathrow to London Taxi | Airport Transfers | Britline",
     "defaultDescription": "Book Heathrow to London airport transfers and London Heathrow cabs. Fixed price, PCO licensed. Transfers to Gatwick, Stansted and more.",
     "ogImage": "/assets/images/og.jpg",
@@ -34,10 +34,10 @@
     ]
   },
   "contact": {
-    "phone": "+44 7700 900000",
-    "whatsapp": "447700900000",
-    "email": "hello@britline.com",
-    "workingHours": "Mon–Sun 24/7"
+    "phone": "+442038863004",
+    "whatsapp": "447440233048",
+    "email": "info@britlinetransfers.co.uk",
+    "workingHours": "24 hours a day, 7 days a week"
   },
   "languages": ["en"],
   "defaultLanguage": "en"

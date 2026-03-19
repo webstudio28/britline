@@ -12,7 +12,7 @@
           </li>
           <li class="flex items-center gap-3">
             {{ icon('whatsapp') }}
-            <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="hover:underline">WhatsApp</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="hover:underline">+{{ site.contact.whatsapp }}</a>
           </li>
           <li class="flex items-center gap-3">
             {{ icon('mail') }}
@@ -30,7 +30,11 @@
         </div>
       </div>
       <div class="bg-white rounded-3xl shadow-lg p-6 md:p-8">
-        <form action="#" method="post" class="flex flex-col gap-4">
+        <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-4">
+          <input type="hidden" name="access_key" value="a6aedba1-d256-42f6-8580-ce211b224baa">
+          <input type="checkbox" name="botcheck" style="display: none;">
+          <input type="hidden" name="subject" value="{{ site.brand.name }} - Contact form">
+          <input type="hidden" name="redirect" value="/contact-thank-you/">
           <div>
             <label for="contact-name" class="block text-sm font-medium text-brand-blue mb-1">{{ c.form.nameLabel }}</label>
             <input type="text" id="contact-name" name="name" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue outline-none" autocomplete="name">
@@ -61,7 +65,11 @@
       </div>
       <div class="p-6 overflow-y-auto flex-1">
         {% set df = home.contact.driverForm %}
-        <form action="#" method="post" class="flex flex-col gap-4">
+        <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-4">
+          <input type="hidden" name="access_key" value="a6aedba1-d256-42f6-8580-ce211b224baa">
+          <input type="checkbox" name="botcheck" style="display: none;">
+          <input type="hidden" name="subject" value="{{ site.brand.name }} - Driver application">
+          <input type="hidden" name="redirect" value="/driver-thank-you/">
           <div>
             <label for="driver-name" class="block text-sm font-medium text-brand-blue mb-1">{{ df.nameLabel }}</label>
             <input type="text" id="driver-name" name="name" required class="w-full rounded-xl border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-brand-blue/30 outline-none" autocomplete="name">
