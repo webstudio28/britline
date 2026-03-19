@@ -114,16 +114,20 @@
   },
   "about": {
     "eyebrow": "About us",
-    "title": "Who We Are",
-    "description": "London Heathrow airport transfers and private hire across the UK.",
-    "paragraph1": "We are a London-based private hire operator with a focus on reliability and comfort. Our team of PCO-licensed drivers and well-maintained vehicles are here to make your journey smooth.",
-    "paragraph2": "Whether you need an airport transfer, a door-to-door ride, or hourly hire, we tailor our service to your schedule. Quality and safety come first.",
+    "title": "Who we are",
+    "description": "Britline Transfers is a London-based private hire company providing professional airport transfers and private transport services across London and the UK.",
+    "paragraph1": "Britline Transfers is a London-based private hire company providing professional airport transfers and private transport services across London and the UK. Our mission is to deliver safe, reliable and comfortable travel for tourists, individuals, families and business clients.",
+    "paragraph2": "We combine professional drivers, modern vehicles and excellent customer service to ensure every journey is smooth and stress-free.",
     "image": "about-img.jpg",
     "features": [
-      { "title": "PCO licensed", "text": "Fully compliant with TfL Private Hire regulations." },
-      { "title": "Fixed quotes", "text": "Transparent pricing with no hidden fees." }
+      { "title": "PCO Licensed drivers", "text": "" },
+      { "title": "Reliable airport pickups with flight tracking", "text": "" },
+      { "title": "Clean and comfortable vehicles", "text": "" },
+      { "title": "Fixed and transparent pricing", "text": "" },
+      { "title": "24/7 customer support", "text": "" },
+      { "title": "Professional and courteous drivers", "text": "" }
     ],
-    "cta": { "label": "Get in touch", "url": "#contact" }
+    "cta": { "label": "", "url": "#contact" }
   },
   "faq": {
     "title": "Frequently Asked Questions",

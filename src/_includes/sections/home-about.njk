@@ -28,7 +28,9 @@
               </div>
               <div>
                 <h3 class="text-lg font-semibold text-brand-blue">{{ feat.title }}</h3>
+                {% if feat.text %}
                 <p class="text-sm text-brand-blue/80 mt-1">{{ feat.text }}</p>
+                {% endif %}
               </div>
             </div>
           </div>
