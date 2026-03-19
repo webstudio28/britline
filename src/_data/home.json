@@ -1,11 +1,12 @@
 {
   "hero": {
-    "headline": "Heathrow to London Taxi & Airport Transfers",
-    "paragraph": "Airport transfers from Heathrow to London and across the UK. Door-to-door, fixed price. PCO licensed drivers.",
+    "headline": "Private Hire Airport Transfers in London and across UK",
+    "paragraph": "Comfortable, reliable and stress-free travel to and from all major London airports, hotels, cruises, city or long-distance journeys.",
+    "subparagraph": "Fixed fares, professional and fully licensed (TFL) drivers, 24/7 service.",
     "booking": {
       "fromLabel": "From",
       "toLabel": "To",
-      "buttonLabel": "Find the cheapest fare"
+      "buttonLabel": "Book now"
     },
     "image": "hero-bg.jpg"
   },

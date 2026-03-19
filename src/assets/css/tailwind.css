@@ -32,6 +32,20 @@ body.modal-open {
   }
 }
 
+/*
+ * Yourwebbooker / taxi widget adds `dialog-open` to document.body, but its bundled CSS
+ * targets `body.dialog-open[_ngcontent-…]` (Angular encapsulation), so `overflow:hidden`
+ * never applies — wheel/touch scroll then reaches the page behind the modal.
+ */
+body.dialog-open {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+}
+html:has(body.dialog-open) {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+}
+
 /* Brand defaults (overridden by base layout from site.config) */
 :root {
   --color-brand-buttercream: #FDFBF7;
@@ -125,4 +139,62 @@ body.modal-open {
 /* Keep horizontal swipes inside strips (avoid page panning) */
 .drag-scroll {
   overscroll-behavior-x: contain;
+}
+
+/* Floating WhatsApp button */
+.whatsapp-float {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(12px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.whatsapp-float svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  .whatsapp-float {
+    width: 4.25rem;
+    height: 4.25rem;
+    right: 1.25rem;
+    bottom: 1.25rem;
+  }
+
+  .whatsapp-float svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.whatsapp-float.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(0) scale(1.05);
+}
+
+@media (max-width: 767px) {
+  .whatsapp-float {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
 }

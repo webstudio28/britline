@@ -3,18 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% else %}Landing{% endif %}</title>
+  <title>Heathrow to London Taxi | Airport Transfers | Britline</title>
   <meta name="description" content="{% if description %}{{ description }}{% elif site and site.seo %}{{ site.seo.defaultDescription }}{% endif %}">
   <link rel="canonical" href="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ page.url | url }}{% endif %}">
   <meta property="og:url" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ page.url | url }}{% endif %}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% endif %}">
+  <meta property="og:title" content="Heathrow to London Taxi | Airport Transfers | Britline">
   <meta property="og:description" content="{% if description %}{{ description }}{% elif site and site.seo %}{{ site.seo.defaultDescription }}{% endif %}">
   <meta property="og:image" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ site.seo.ogImage }}{% endif %}">
   <meta name="twitter:card" content="{% if site and site.seo %}{{ site.seo.twitterCard }}{% else %}summary_large_image{% endif %}">
-  <meta name="twitter:title" content="{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% endif %}">
+  <meta name="twitter:title" content="Heathrow to London Taxi | Airport Transfers | Britline">
   <meta name="twitter:description" content="{% if description %}{{ description }}{% elif site and site.seo %}{{ site.seo.defaultDescription }}{% endif %}">
   <meta name="twitter:image" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ site.seo.ogImage }}{% endif %}">
+  <script>
+    (function () {
+      var LOCKED_TITLE = "Heathrow to London Taxi | Airport Transfers | Britline";
+      function enforceTitle() {
+        if (document.title !== LOCKED_TITLE) document.title = LOCKED_TITLE;
+      }
+      enforceTitle();
+      window.setInterval(enforceTitle, 250);
+      window.addEventListener("load", enforceTitle);
+      window.addEventListener("pageshow", enforceTitle);
+      document.addEventListener("visibilitychange", function () {
+        if (!document.hidden) enforceTitle();
+      });
+      var titleEl = document.querySelector("title");
+      if (titleEl) {
+        var mo = new MutationObserver(enforceTitle);
+        mo.observe(titleEl, { childList: true, characterData: true, subtree: true });
+      }
+    })();
+  </script>
   <link rel="icon" href="{{ '/favicon.png' | url }}" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +43,22 @@
   <link rel="stylesheet" href="https://yourwebbooker.com/popup-widget/styles.css">
 </head>
 <body class="font-sans bg-brand-buttercream"{% if site and site.colors %} style="--color-brand-buttercream: {{ site.colors.buttercream }}; --color-brand-blue: {{ site.colors.britishBlue }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
+  {% from "macros/ui.njk" import icon %}
   {% include "header.njk" %}
   {{ content | safe }}
   {% include "footer.njk" %}
+
+  <a
+    id="whatsapp-float"
+    href="https://wa.me/{{ site.contact.whatsapp }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp-float"
+    aria-label="Chat on WhatsApp"
+  >
+    {{ icon('whatsapp') }}
+    <span class="sr-only">WhatsApp</span>
+  </a>
 
   {# Service detail modal (outside sections so it doesn't affect services strip layout); content set by modal.js when "See more" is clicked #}
   <div id="modal-service-detail" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" aria-labelledby="modal-service-detail-title" role="dialog" hidden>
@@ -43,6 +76,27 @@
 
   <script src="https://yourwebbooker.com/popup-widget/webbooker.js" type="module"></script>
   <popup-widget formid="6999be11755b2d06cd1c98dc" showtopbar="false" showlogo="false" language="en" widgettype="popup-text" headercolor="{% if site and site.colors %}{{ site.colors.britishBlue }}{% else %}#1E3A5F{% endif %}" textcolor="{% if site and site.colors %}{{ site.colors.britishBlue }}{% else %}#1E3A5F{% endif %}" backgroundcolor="{% if site and site.colors %}{{ site.colors.buttercream }}{% else %}#FDFBF7{% endif %}" buttonstyle="rounded"></popup-widget>
+  {# Widget adds body.dialog-open but its CSS scroll-lock doesn’t apply to body; lock html scroll. #}
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function syncWebBookerScrollLock() {
+        var open = document.body.classList.contains("dialog-open");
+        if (open) {
+          root.style.overflow = "hidden";
+          root.style.overscrollBehavior = "none";
+        } else {
+          root.style.overflow = "";
+          root.style.overscrollBehavior = "";
+        }
+      }
+      if (document.body) {
+        var mo = new MutationObserver(syncWebBookerScrollLock);
+        mo.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+        syncWebBookerScrollLock();
+      }
+    })();
+  </script>
   <script>
     (function () {
       var toggle = document.getElementById('mobile-menu-toggle');
@@ -200,6 +254,66 @@
       });
       strip.addEventListener('scroll', updateButtons);
       updateButtons();
+    })();
+
+    // Floating WhatsApp button visibility:
+    // - Desktop/tablet: show only after the hero section.
+    // - Mobile: always show.
+    (function () {
+      var hero = document.getElementById('hero');
+      var floatingButton = document.getElementById('whatsapp-float');
+      var desktopBreakpoint = window.matchMedia('(min-width: 768px)');
+
+      if (!floatingButton) return;
+
+      function setVisible(isVisible) {
+        floatingButton.classList.toggle('is-visible', isVisible);
+      }
+
+      if (!hero) {
+        setVisible(true);
+        return;
+      }
+
+      function applyMobileRule() {
+        if (!desktopBreakpoint.matches) {
+          setVisible(true);
+        }
+      }
+
+      function applyDesktopRule() {
+        if (!desktopBreakpoint.matches) return;
+        var heroBottom = hero.getBoundingClientRect().bottom;
+        setVisible(heroBottom <= 0);
+      }
+
+      function refreshVisibility() {
+        if (desktopBreakpoint.matches) applyDesktopRule();
+        else applyMobileRule();
+      }
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          var entry = entries[0];
+          if (!entry) return;
+          if (desktopBreakpoint.matches) setVisible(!entry.isIntersecting);
+          else setVisible(true);
+        }, { threshold: 0.01 });
+
+        observer.observe(hero);
+        refreshVisibility();
+      } else {
+        window.addEventListener('scroll', applyDesktopRule, { passive: true });
+        refreshVisibility();
+      }
+
+      if (typeof desktopBreakpoint.addEventListener === 'function') {
+        desktopBreakpoint.addEventListener('change', refreshVisibility);
+      } else if (typeof desktopBreakpoint.addListener === 'function') {
+        desktopBreakpoint.addListener(refreshVisibility);
+      }
+
+      window.addEventListener('resize', refreshVisibility);
     })();
   </script>
 </body>
