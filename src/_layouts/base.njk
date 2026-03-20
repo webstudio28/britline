@@ -76,17 +76,6 @@
     </div>
   </div>
 
-  <div id="site-launch-curtain" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white px-6 py-8" role="dialog" aria-modal="true" aria-labelledby="site-launch-curtain-title">
-    <div class="w-full max-w-2xl rounded-[2rem] border border-brand-blue/10 bg-white px-6 py-10 text-center shadow-[0_24px_80px_rgba(30,58,95,0.14)] md:px-10 md:py-14">
-      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-brand-blue/60">Britline Transfers</p>
-      <h1 id="site-launch-curtain-title" class="mb-4 text-3xl font-bold text-brand-blue md:text-5xl">Website In Development</h1>
-      <p class="mx-auto max-w-xl text-base leading-7 text-brand-blue/80 md:text-lg">
-        Our website is currently being finalised and will be available shortly. If you have any questions or would like to speak with our team, please contact us on
-        <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="font-semibold text-brand-blue underline underline-offset-4">{{ site.contact.phone }}</a>.
-      </p>
-    </div>
-  </div>
-
   <script src="https://yourwebbooker.com/popup-widget/webbooker.js" type="module"></script>
   <popup-widget
     formid="698c866f150c556614986114"
@@ -370,5 +359,24 @@
       window.addEventListener('resize', refreshVisibility);
     })();
   </script>
+
+  <div
+    id="site-launch-curtain"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="site-launch-curtain-title"
+    style="position: fixed !important; inset: 0 !important; z-index: 50000 !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 2rem 1.5rem !important; background: rgba(255, 255, 255, 0.985) !important;"
+  >
+    <div
+      style="position: relative !important; z-index: 50001 !important; width: min(100%, 42rem) !important; border: 1px solid rgba(30, 58, 95, 0.12) !important; border-radius: 2rem !important; background: #ffffff !important; padding: 2.5rem 1.75rem !important; text-align: center !important; box-shadow: 0 24px 80px rgba(30, 58, 95, 0.14) !important;"
+    >
+      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-brand-blue/60">Britline Transfers</p>
+      <h1 id="site-launch-curtain-title" class="mb-4 text-3xl font-bold text-brand-blue md:text-5xl">Website In Development</h1>
+      <p class="mx-auto max-w-xl text-base leading-7 text-brand-blue/80 md:text-lg">
+        Our website is currently being finalised and will be available shortly. If you have any questions or would like to speak with our team, please contact us on
+        <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="font-semibold text-brand-blue underline underline-offset-4">{{ site.contact.phone }}</a>.
+      </p>
+    </div>
+  </div>
 </body>
 </html>
