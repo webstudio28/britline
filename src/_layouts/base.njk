@@ -42,35 +42,48 @@
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
   <link rel="stylesheet" href="https://yourwebbooker.com/popup-widget/styles.css">
 </head>
-<body class="font-sans bg-brand-buttercream"{% if site and site.colors %} style="--color-brand-buttercream: {{ site.colors.buttercream }}; --color-brand-blue: {{ site.colors.britishBlue }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
+<body class="font-sans bg-brand-buttercream overflow-hidden"{% if site and site.colors %} style="--color-brand-buttercream: {{ site.colors.buttercream }}; --color-brand-blue: {{ site.colors.britishBlue }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
   {% from "macros/ui.njk" import icon %}
-  {% include "header.njk" %}
-  {{ content | safe }}
-  {% include "footer.njk" %}
+  <div id="site-shell" inert aria-hidden="true">
+    {% include "header.njk" %}
+    {{ content | safe }}
+    {% include "footer.njk" %}
 
-  <a
-    id="whatsapp-float"
-    href="https://wa.me/{{ site.contact.whatsapp }}"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="whatsapp-float"
-    aria-label="Chat on WhatsApp"
-  >
-    {{ icon('whatsapp') }}
-    <span class="sr-only">WhatsApp</span>
-  </a>
+    <a
+      id="whatsapp-float"
+      href="https://wa.me/{{ site.contact.whatsapp }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
+      aria-label="Chat on WhatsApp"
+    >
+      {{ icon('whatsapp') }}
+      <span class="sr-only">WhatsApp</span>
+    </a>
 
-  {# Service detail modal (outside sections so it doesn't affect services strip layout); content set by modal.js when "See more" is clicked #}
-  <div id="modal-service-detail" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" aria-labelledby="modal-service-detail-title" role="dialog" hidden>
-    <div class="absolute inset-0 bg-black/50" data-modal-close aria-label="Close"></div>
-    <div class="relative bg-white rounded-3xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col">
-      <div class="flex items-center justify-between p-6 border-b border-gray-200">
-        <h2 id="modal-service-detail-title" class="text-xl font-bold text-brand-blue">Service</h2>
-        <button type="button" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" data-modal-close aria-label="Close modal">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
+    {# Service detail modal (outside sections so it doesn't affect services strip layout); content set by modal.js when "See more" is clicked #}
+    <div id="modal-service-detail" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" aria-labelledby="modal-service-detail-title" role="dialog" hidden>
+      <div class="absolute inset-0 bg-black/50" data-modal-close aria-label="Close"></div>
+      <div class="relative bg-white rounded-3xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col">
+        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+          <h2 id="modal-service-detail-title" class="text-xl font-bold text-brand-blue">Service</h2>
+          <button type="button" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" data-modal-close aria-label="Close modal">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div id="modal-service-detail-body" class="p-6 overflow-y-auto flex-1 text-brand-blue/90"></div>
       </div>
-      <div id="modal-service-detail-body" class="p-6 overflow-y-auto flex-1 text-brand-blue/90"></div>
+    </div>
+  </div>
+
+  <div id="site-launch-curtain" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white px-6 py-8" role="dialog" aria-modal="true" aria-labelledby="site-launch-curtain-title">
+    <div class="w-full max-w-2xl rounded-[2rem] border border-brand-blue/10 bg-white px-6 py-10 text-center shadow-[0_24px_80px_rgba(30,58,95,0.14)] md:px-10 md:py-14">
+      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-brand-blue/60">Britline Transfers</p>
+      <h1 id="site-launch-curtain-title" class="mb-4 text-3xl font-bold text-brand-blue md:text-5xl">Website In Development</h1>
+      <p class="mx-auto max-w-xl text-base leading-7 text-brand-blue/80 md:text-lg">
+        Our website is currently being finalised and will be available shortly. If you have any questions or would like to speak with our team, please contact us on
+        <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="font-semibold text-brand-blue underline underline-offset-4">{{ site.contact.phone }}</a>.
+      </p>
     </div>
   </div>
 
