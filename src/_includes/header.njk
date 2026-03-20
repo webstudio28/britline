@@ -1,4 +1,6 @@
-<header class="border-b border-brand-blue/10 bg-white/95 sticky top-0 z-40">
+{% from "macros/ui.njk" import icon %}
+
+<header class="bg-white/95 sticky top-0 z-40">
   <div class="container-custom flex items-center justify-between py-4">
     <a href="{{ '/' | url }}" class="flex items-center gap-2" aria-label="{{ site.brand.name }} home">
       {% if site.brand.logo %}
@@ -7,6 +9,7 @@
       <span class="font-semibold text-lg text-brand-blue">{{ site.brand.name }}</span>
       {% endif %}
     </a>
+
     <nav class="hidden lg:flex items-center gap-6" aria-label="Main">
       {% for item in site.nav.header %}
         {% if item.isCta %}
@@ -16,11 +19,26 @@
         {% endif %}
       {% endfor %}
     </nav>
+
     <button type="button" id="mobile-menu-toggle" class="mobile-burger lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg text-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out mb-1.5"></span>
       <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out mb-1.5"></span>
       <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out"></span>
     </button>
+  </div>
+
+  {# Phone strip under the main header row (still sticky with header) #}
+  <div class="border-t border-brand-blue/10 bg-brand-blue">
+    <div class="container-custom flex items-center justify-start gap-2 py-4">
+      <a
+        href="tel:{{ site.contact.phone | replace(' ', '') }}"
+        class="inline-flex items-center gap-2 text-base md:text-lg font-semibold text-white/95 hover:text-white"
+        aria-label="Call {{ site.contact.phone }}"
+      >
+        {{ icon('phone') }}
+        <span>{{ site.contact.phone }}</span>
+      </a>
+    </div>
   </div>
 </header>
 
