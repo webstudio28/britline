@@ -42,9 +42,9 @@
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
   <link rel="stylesheet" href="https://yourwebbooker.com/popup-widget/styles.css">
 </head>
-<body class="font-sans bg-brand-buttercream overflow-hidden"{% if site and site.colors %} style="--color-brand-buttercream: {{ site.colors.buttercream }}; --color-brand-blue: {{ site.colors.britishBlue }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
+<body class="font-sans bg-brand-buttercream"{% if site and site.colors %} style="--color-brand-buttercream: {{ site.colors.buttercream }}; --color-brand-blue: {{ site.colors.britishBlue }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
   {% from "macros/ui.njk" import icon %}
-  <div id="site-shell" inert aria-hidden="true">
+  <div id="site-shell">
     {% include "header.njk" %}
     {{ content | safe }}
     {% include "footer.njk" %}
@@ -359,24 +359,5 @@
       window.addEventListener('resize', refreshVisibility);
     })();
   </script>
-
-  <div
-    id="site-launch-curtain"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="site-launch-curtain-title"
-    style="position: fixed !important; inset: 0 !important; z-index: 50000 !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 2rem 1.5rem !important; background: rgba(255, 255, 255, 0.985) !important;"
-  >
-    <div
-      style="position: relative !important; z-index: 50001 !important; width: min(100%, 42rem) !important; border: 1px solid rgba(30, 58, 95, 0.12) !important; border-radius: 2rem !important; background: #ffffff !important; padding: 2.5rem 1.75rem !important; text-align: center !important; box-shadow: 0 24px 80px rgba(30, 58, 95, 0.14) !important;"
-    >
-      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-brand-blue/60">Britline Transfers</p>
-      <h1 id="site-launch-curtain-title" class="mb-4 text-3xl font-bold text-brand-blue md:text-5xl">Website In Development</h1>
-      <p class="mx-auto max-w-xl text-base leading-7 text-brand-blue/80 md:text-lg">
-        Our website is currently being finalised and will be available shortly. If you have any questions or would like to speak with our team, please contact us on
-        <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="font-semibold text-brand-blue underline underline-offset-4">{{ site.contact.phone }}</a>.
-      </p>
-    </div>
-  </div>
 </body>
 </html>
