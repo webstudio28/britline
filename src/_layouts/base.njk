@@ -92,6 +92,34 @@
     buttontext="Order now!"
     buttonstyle="rounded"
   ></popup-widget>
+
+  <div
+    id="modal-booking-dev-notice"
+    class="fixed inset-0 flex items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-booking-dev-notice-title"
+    hidden
+  >
+    <div class="absolute inset-0 bg-black/60" data-booking-dev-close aria-hidden="true"></div>
+    <div class="relative bg-white rounded-3xl shadow-xl max-w-lg w-full overflow-hidden flex flex-col text-brand-blue">
+      <div class="flex items-center justify-between gap-4 p-6 border-b border-gray-200">
+        <h2 id="modal-booking-dev-notice-title" class="text-xl font-bold">Booking unavailable</h2>
+        <button type="button" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 shrink-0" data-booking-dev-close aria-label="Close modal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6 text-brand-blue/90 leading-relaxed">
+        <p>Our website is still in development, so bookings are not available at the moment.</p>
+        <p class="mt-4">
+          If you have any questions, please email us at
+          <a href="mailto:{{ site.contact.email }}" class="font-semibold text-brand-blue underline underline-offset-4">{{ site.contact.email }}</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ '/assets/js/booking-dev-guard.js' | url }}"></script>
   {# Widget adds body.dialog-open but its CSS scroll-lock doesn’t apply to body; lock html scroll. #}
   <script>
     (function () {

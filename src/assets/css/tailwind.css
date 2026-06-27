@@ -141,6 +141,15 @@ html:has(body.dialog-open) {
   overscroll-behavior-x: contain;
 }
 
+/* Booking dev notice — must sit above the web booker overlay */
+#modal-booking-dev-notice {
+  z-index: 2147483647 !important;
+}
+body.booking-dev-blocked .overlay.nsm-overlay-open,
+body.booking-dev-blocked .overlay.nsm-overlay-open * {
+  pointer-events: none !important;
+}
+
 /* Web Booker modal sizing on mobile */
 @media (max-width: 767px) {
   body.dialog-open .overlay.nsm-overlay-open {
