@@ -76,6 +76,7 @@
     </div>
   </div>
 
+  <script src="{{ '/assets/js/booking-dev-guard.js' | url }}"></script>
   <script src="https://yourwebbooker.com/popup-widget/webbooker.js" type="module"></script>
   <popup-widget
     formid="698c866f150c556614986114"
@@ -93,6 +94,11 @@
     buttonstyle="rounded"
   ></popup-widget>
 
+  <style>
+    #modal-booking-dev-notice { z-index: 2147483647 !important; }
+    body.booking-dev-blocked .overlay.nsm-overlay-open,
+    body.booking-dev-blocked .overlay.nsm-overlay-open * { pointer-events: none !important; }
+  </style>
   <div
     id="modal-booking-dev-notice"
     class="fixed inset-0 flex items-center justify-center p-4"
@@ -100,6 +106,7 @@
     aria-modal="true"
     aria-labelledby="modal-booking-dev-notice-title"
     hidden
+    style="z-index: 2147483647;"
   >
     <div class="absolute inset-0 bg-black/60" data-booking-dev-close aria-hidden="true"></div>
     <div class="relative bg-white rounded-3xl shadow-xl max-w-lg w-full overflow-hidden flex flex-col text-brand-blue">
@@ -119,7 +126,6 @@
     </div>
   </div>
 
-  <script src="{{ '/assets/js/booking-dev-guard.js' | url }}"></script>
   {# Widget adds body.dialog-open but its CSS scroll-lock doesn’t apply to body; lock html scroll. #}
   <script>
     (function () {

@@ -1,0 +1,62 @@
+---
+layout: null
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.brand.name }}
+
+> {{ site.seo.defaultDescription }}
+
+{{ site.brand.name }} is a London-based private hire operator providing airport transfers and private transport across London and the UK. Services include door-to-door journeys, airport and cruise port transfers, chauffeur hire, group travel, and long-distance trips including EU routes. The company is authorised by Transport for London (TfL) and operates 24/7.
+
+**Website status:** The site is currently in development. Online booking is not available yet. For questions, contact {{ site.contact.email }}.
+
+## Contact
+
+- Phone: {{ site.contact.phone }}
+- WhatsApp: +{{ site.contact.whatsapp }}
+- Email: {{ site.contact.email }}
+- Hours: {{ site.contact.workingHours }}
+
+## Main pages
+
+- [Home]({{ site.seo.siteUrl }}/): Airport transfers, fleet, services, FAQ, and contact
+- [Contact thank you]({{ site.seo.siteUrl }}/contact-thank-you/): Shown after the contact form is submitted
+- [Driver application thank you]({{ site.seo.siteUrl }}/driver-thank-you/): Shown after a driver application is submitted
+
+## Services
+
+{% for item in home.services.items -%}
+- {{ item.title | safe }}: {{ item.description | safe }}
+{% endfor %}
+
+## Fleet
+
+{% for item in home.fleets.items -%}
+- {{ item.name | safe }}: {{ item.description | safe }}
+{% endfor %}
+
+## Popular routes
+
+{% for item in home.popularTransfers.items -%}
+- {{ item.label }}
+{% endfor %}
+
+## Frequently asked questions
+
+{% for item in home.faq.items -%}
+- **{{ item.question | safe }}** {{ item.answer | safe }}
+{% endfor %}
+
+## Policies
+
+- [Terms and Conditions]({{ site.seo.siteUrl }}/#): {{ home.policies.terms.title }}
+- [Privacy Policy]({{ site.seo.siteUrl }}/#): {{ home.policies.privacy.title }}
+- [Refund Policy]({{ site.seo.siteUrl }}/#): {{ home.policies.refund.title }}
+
+Policy text is available in modals on the homepage footer.
+
+## Optional
+
+- [Sitemap]({{ site.seo.siteUrl }}/sitemap.xml)
+- [Robots]({{ site.seo.siteUrl }}/robots.txt)
